@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://o474issdswyw"]
+[gd_scene load_steps=2 format=3 uid="uid://o474issdswyw"]
+
+[ext_resource type="PackedScene" uid="uid://nngar081b03t" path="res://scenes/ui_manager.tscn" id="1_4xfga"]
 
 [node name="Node3D" type="Node3D"]
+
+[node name="UI_manager" parent="." instance=ExtResource("1_4xfga")]

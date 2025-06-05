@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bp2n0d7ix4dm4"]
+[gd_scene load_steps=3 format=3 uid="uid://bp2n0d7ix4dm4"]
 
 [ext_resource type="Script" uid="uid://cck5oh7f4wvhw" path="res://scripts/socket_manager.gd" id="1_bspfj"]
+[ext_resource type="PackedScene" uid="uid://vt8q0ctdxidw" path="res://scenes/json_parser.tscn" id="2_yypbe"]
 
-[node name="Socket_Manager" type="Node"]
+[node name="socket_manager" type="Node"]
 script = ExtResource("1_bspfj")
+
+[node name="JSON_parser" parent="." instance=ExtResource("2_yypbe")]
