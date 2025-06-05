@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="InteractiveMapTechnicalConceptGodot"
+run/main_scene="uid://o474issdswyw"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SocketManager="*res://scenes/socket_manager.tscn"
 
 [debug]
 
@@ -33,6 +38,13 @@ version_control/autoload_on_startup=true
 folder_colors={
 "res://scenes/": "purple",
 "res://scripts/": "blue"
+}
+
+[input]
+
+select_icon_tree={
+"deadzone": 0.2,
+"events": []
 }
 
 [rendering]
