@@ -42,7 +42,19 @@ folder_colors={
 
 [input]
 
-select_icon_tree={
+select_icon_tree0={
+"deadzone": 0.2,
+"events": []
+}
+select_icon_tree1={
+"deadzone": 0.2,
+"events": []
+}
+select_icon_tree2={
+"deadzone": 0.2,
+"events": []
+}
+select_icon_tree3={
 "deadzone": 0.2,
 "events": []
 }

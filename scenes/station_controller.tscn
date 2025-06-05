@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwa7akeb180pv"]
+
+[ext_resource type="Script" uid="uid://cwd6rvr3x3lrc" path="res://scripts/station_controller.gd" id="1_e3jjm"]
+
+[node name="StationController" type="Node"]
+script = ExtResource("1_e3jjm")
