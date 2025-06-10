@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5sw5iq2kuyux"]
+
+[ext_resource type="Theme" uid="uid://230ma3pcldq4" path="res://ui/ueTheme.tres" id="1_42xyh"]
+[ext_resource type="Texture2D" uid="uid://dyp2woqubc17a" path="res://assets/images/treeIcon.png" id="2_42xyh"]
+
+[node name="ImageButton" type="PanelContainer"]
+custom_minimum_size = Vector2(80, 80)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -496.0
+offset_bottom = -244.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_42xyh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_42xyh")

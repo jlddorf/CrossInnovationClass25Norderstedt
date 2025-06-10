@@ -4,11 +4,11 @@
 bg_color = Color(0.21149, 0.669946, 0.725567, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3qac"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
 bg_color = Color(0.159013, 0.658932, 0.815731, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
 border_color = Color(0.992157, 0.0509804, 0.0509804, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
