@@ -8,5 +8,5 @@ func _ready() -> void:
 
 
 
-func _on_texture_button_pressed() -> void:
-	print("Button has been pressed")
+func _on_texture_button_toggled(toggled_on: bool) -> void:
+	print("Button is %s" % str(toggled_on))
