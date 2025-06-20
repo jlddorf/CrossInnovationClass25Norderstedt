@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://nngar081b03t"]
+[gd_scene load_steps=5 format=3 uid="uid://nngar081b03t"]
 
 [ext_resource type="PackedScene" uid="uid://cwa7akeb180pv" path="res://scenes/station_controller.tscn" id="1_rwj1f"]
+[ext_resource type="Texture2D" uid="uid://cs252y6fym48j" path="res://assets/images/Docking Station Sketch.png" id="2_iku3t"]
+[ext_resource type="Texture2D" uid="uid://b6mcfhruapmvr" path="res://assets/images/Question Mark Sketch.png" id="3_reske"]
+[ext_resource type="Script" uid="uid://d2jkeiqffeqoy" path="res://ui/station_Button.gd" id="4_j2mt3"]
 
 [node name="UIManager" type="Control"]
 layout_mode = 3
@@ -10,13 +13,69 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="StationController" parent="." instance=ExtResource("1_rwj1f")]
+[node name="StationControllers" type="Node" parent="."]
 
-[node name="StationController2" parent="." instance=ExtResource("1_rwj1f")]
+[node name="StationController2" parent="StationControllers" node_paths=PackedStringArray("display") instance=ExtResource("1_rwj1f")]
 player_id = 1
+display = NodePath("../../Viewport/MarginContainer/VBoxContainer/MarginContainer/ItemDisplay")
 
-[node name="StationController3" parent="." instance=ExtResource("1_rwj1f")]
-player_id = 2
+[node name="Viewport" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="StationController4" parent="." instance=ExtResource("1_rwj1f")]
-player_id = 3
+[node name="MarginContainer" type="MarginContainer" parent="Viewport"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Viewport/MarginContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Viewport/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Viewport/MarginContainer/VBoxContainer/Panel"]
+custom_minimum_size = Vector2(500, 70)
+layout_mode = 2
+offset_top = 4.0
+offset_right = 500.0
+offset_bottom = 74.0
+bbcode_enabled = true
+text = "[b]This where your category could be[/b]
+This is a very interesting text about this category. So interesting..."
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Viewport/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="Viewport/MarginContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_iku3t")
+expand_mode = 1
+
+[node name="ItemDisplay" type="TextureButton" parent="Viewport/MarginContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_reske")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("4_j2mt3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Viewport/MarginContainer/VBoxContainer/MarginContainer")

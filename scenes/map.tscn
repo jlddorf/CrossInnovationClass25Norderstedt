@@ -1,11 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://o474issdswyw"]
+[gd_scene load_steps=6 format=3 uid="uid://o474issdswyw"]
 
 [ext_resource type="PackedScene" uid="uid://nngar081b03t" path="res://scenes/ui_manager.tscn" id="1_4xfga"]
 [ext_resource type="Texture2D" uid="uid://didddc44ysl1j" path="res://assets/images/map.png" id="2_paxxb"]
-[ext_resource type="Theme" uid="uid://230ma3pcldq4" path="res://ui/ueTheme.tres" id="3_gldc4"]
-[ext_resource type="PackedScene" uid="uid://c5sw5iq2kuyux" path="res://ui/imageButton.tscn" id="4_0cso3"]
-[ext_resource type="PackedScene" uid="uid://jswnggviq36n" path="res://ui/iconIndicator.tscn" id="5_2klcf"]
-[ext_resource type="Texture2D" uid="uid://dyp2woqubc17a" path="res://assets/images/treeIcon.png" id="6_2lpho"]
 [ext_resource type="PackedScene" uid="uid://bp2n0d7ix4dm4" path="res://scenes/socket_manager.tscn" id="7_nakos"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gldc4"]
@@ -29,133 +25,6 @@ projection = 1
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 0)
 light_energy = 5.0
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TopMenu" type="HBoxContainer" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -166.0
-offset_top = 10.0
-offset_right = 166.0
-offset_bottom = 90.0
-grow_horizontal = 2
-theme = ExtResource("3_gldc4")
-alignment = 1
-
-[node name="PanelContainer" parent="CanvasLayer/Control/TopMenu" instance=ExtResource("4_0cso3")]
-layout_mode = 2
-
-[node name="PanelContainer2" parent="CanvasLayer/Control/TopMenu" instance=ExtResource("4_0cso3")]
-layout_mode = 2
-
-[node name="PanelContainer3" parent="CanvasLayer/Control/TopMenu" instance=ExtResource("4_0cso3")]
-layout_mode = 2
-
-[node name="PanelContainer4" parent="CanvasLayer/Control/TopMenu" instance=ExtResource("4_0cso3")]
-layout_mode = 2
-
-[node name="PlayerStationBottom" type="HBoxContainer" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.932
-anchor_right = 0.5
-anchor_bottom = 0.932
-offset_left = -94.0
-offset_top = -44.112
-offset_right = 94.0
-offset_bottom = -4.0
-grow_horizontal = 2
-grow_vertical = 0
-alignment = 1
-
-[node name="PanelContainer" parent="CanvasLayer/Control/PlayerStationBottom" instance=ExtResource("5_2klcf")]
-layout_mode = 2
-texture = ExtResource("6_2lpho")
-
-[node name="IconIndicator" parent="CanvasLayer/Control/PlayerStationBottom" instance=ExtResource("5_2klcf")]
-layout_mode = 2
-
-[node name="IconIndicator2" parent="CanvasLayer/Control/PlayerStationBottom" instance=ExtResource("5_2klcf")]
-layout_mode = 2
-
-[node name="IconIndicator3" parent="CanvasLayer/Control/PlayerStationBottom" instance=ExtResource("5_2klcf")]
-layout_mode = 2
-
-[node name="IconIndicator4" parent="CanvasLayer/Control/PlayerStationBottom" instance=ExtResource("5_2klcf")]
-layout_mode = 2
-
-[node name="PlayerStationLeft" type="VBoxContainer" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.03
-anchor_top = 0.5
-anchor_right = 0.03
-anchor_bottom = 0.5
-offset_top = -20.0
-offset_right = 40.0
-offset_bottom = 20.0
-grow_vertical = 2
-
-[node name="IconIndicator3" parent="CanvasLayer/Control/PlayerStationLeft" instance=ExtResource("5_2klcf")]
-layout_mode = 2
-
-[node name="IconIndicator4" parent="CanvasLayer/Control/PlayerStationLeft" instance=ExtResource("5_2klcf")]
-layout_mode = 2
-
-[node name="IconIndicator5" parent="CanvasLayer/Control/PlayerStationLeft" instance=ExtResource("5_2klcf")]
-layout_mode = 2
-
-[node name="IconIndicator6" parent="CanvasLayer/Control/PlayerStationLeft" instance=ExtResource("5_2klcf")]
-layout_mode = 2
-
-[node name="IconIndicator7" parent="CanvasLayer/Control/PlayerStationLeft" instance=ExtResource("5_2klcf")]
-layout_mode = 2
-
-[node name="IconIndicator8" parent="CanvasLayer/Control/PlayerStationLeft" instance=ExtResource("5_2klcf")]
-layout_mode = 2
-
-[node name="PlayerStationRight" type="VBoxContainer" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.97
-anchor_top = 0.5
-anchor_right = 0.97
-anchor_bottom = 0.5
-offset_left = -44.0
-offset_top = -142.0
-offset_bottom = 142.0
-grow_horizontal = 0
-grow_vertical = 2
-
-[node name="IconIndicator3" parent="CanvasLayer/Control/PlayerStationRight" instance=ExtResource("5_2klcf")]
-layout_mode = 2
-
-[node name="IconIndicator4" parent="CanvasLayer/Control/PlayerStationRight" instance=ExtResource("5_2klcf")]
-layout_mode = 2
-
-[node name="IconIndicator5" parent="CanvasLayer/Control/PlayerStationRight" instance=ExtResource("5_2klcf")]
-layout_mode = 2
-
-[node name="IconIndicator6" parent="CanvasLayer/Control/PlayerStationRight" instance=ExtResource("5_2klcf")]
-layout_mode = 2
-
-[node name="IconIndicator7" parent="CanvasLayer/Control/PlayerStationRight" instance=ExtResource("5_2klcf")]
-layout_mode = 2
-
-[node name="IconIndicator8" parent="CanvasLayer/Control/PlayerStationRight" instance=ExtResource("5_2klcf")]
-layout_mode = 2
 
 [node name="socket_manager" parent="." instance=ExtResource("7_nakos")]
 websocket_url = "ws://localhost:8090/input/1"
