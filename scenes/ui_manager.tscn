@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://nngar081b03t"]
+[gd_scene load_steps=7 format=3 uid="uid://nngar081b03t"]
 
 [ext_resource type="PackedScene" uid="uid://cwa7akeb180pv" path="res://scenes/station_controller.tscn" id="1_rwj1f"]
 [ext_resource type="Texture2D" uid="uid://cs252y6fym48j" path="res://assets/images/Docking Station Sketch.png" id="2_iku3t"]
+[ext_resource type="Theme" uid="uid://230ma3pcldq4" path="res://ui/ueTheme.tres" id="2_ixhu3"]
+[ext_resource type="Script" uid="uid://cewmmmceh1goa" path="res://ui/amountProgress.gd" id="3_gl862"]
 [ext_resource type="Texture2D" uid="uid://b6mcfhruapmvr" path="res://assets/images/Question Mark Sketch.png" id="3_reske"]
 [ext_resource type="Script" uid="uid://d2jkeiqffeqoy" path="res://ui/station_Button.gd" id="4_j2mt3"]
 
@@ -15,9 +17,10 @@ grow_vertical = 2
 
 [node name="StationControllers" type="Node" parent="."]
 
-[node name="StationController2" parent="StationControllers" node_paths=PackedStringArray("display") instance=ExtResource("1_rwj1f")]
+[node name="StationController2" parent="StationControllers" node_paths=PackedStringArray("display", "amountProgress") instance=ExtResource("1_rwj1f")]
 player_id = 1
-display = NodePath("../../Viewport/MarginContainer/VBoxContainer/MarginContainer/ItemDisplay")
+display = NodePath("../../Viewport/Player1Container/VBoxContainer/MarginContainer/ItemDisplay")
+amountProgress = NodePath("../../Viewport/Player1Container/VBoxContainer/Panel/VBoxContainer/MarginContainer/PlacedAmountBar")
 
 [node name="Viewport" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -27,39 +30,58 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Viewport"]
+[node name="Player1Container" type="MarginContainer" parent="Viewport"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Viewport/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Viewport/Player1Container"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="Viewport/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(500, 100)
+[node name="Panel" type="Panel" parent="Viewport/Player1Container/VBoxContainer"]
+custom_minimum_size = Vector2(500, 159)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Viewport/MarginContainer/VBoxContainer/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Viewport/Player1Container/VBoxContainer/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Viewport/Player1Container/VBoxContainer/Panel/VBoxContainer"]
 custom_minimum_size = Vector2(500, 70)
 layout_mode = 2
-offset_top = 4.0
-offset_right = 500.0
-offset_bottom = 74.0
 bbcode_enabled = true
-text = "[b]This where your category could be[/b]
+text = "[b]This is where your category could be[/b]
 This is a very interesting text about this category. So interesting..."
 horizontal_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Viewport/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Viewport/Player1Container/VBoxContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="PlacedAmountBar" type="ProgressBar" parent="Viewport/Player1Container/VBoxContainer/Panel/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(450, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_ixhu3")
+value = 20.42
+show_percentage = false
+script = ExtResource("3_gl862")
+
+[node name="MarginContainer" type="MarginContainer" parent="Viewport/Player1Container/VBoxContainer"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="TextureRect" type="TextureRect" parent="Viewport/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="Viewport/Player1Container/VBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -67,7 +89,7 @@ size_flags_vertical = 4
 texture = ExtResource("2_iku3t")
 expand_mode = 1
 
-[node name="ItemDisplay" type="TextureButton" parent="Viewport/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="ItemDisplay" type="TextureButton" parent="Viewport/Player1Container/VBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -76,6 +98,3 @@ texture_normal = ExtResource("3_reske")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("4_j2mt3")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Viewport/MarginContainer/VBoxContainer/MarginContainer")

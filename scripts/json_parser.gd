@@ -25,13 +25,20 @@ func parse(json_object: Dictionary) -> void:
 		return 
 	var device_type: String = json_object.get(INPUT_KEY_DEVICE_TYPE)
 	var device_id : int = json_object.get(INPUT_KEY_DEVICE_ID) as int
-	if device_type == DEVICE_RFID_READER:
-		var selected_item: String = json_object.get(INPUT_KEY_RFID_CONTENT, "") if json_object.get(INPUT_KEY_RFID_CONTENT, "") != null else ""
-		# TODO replace with actual logic
-		match selected_item:
-			"tree": 
-				GlobalValues.selectedItems[device_id] = GlobalValues.Item.NATURE
-			_:
-				GlobalValues.selectedItems[device_id] = GlobalValues.Item.NONE
+	match device_type :
+		DEVICE_RFID_READER:
+			var selected_item: String = json_object.get(INPUT_KEY_RFID_CONTENT, "") if json_object.get(INPUT_KEY_RFID_CONTENT, "") != null else ""
+			# TODO replace with actual logic
+			match selected_item:
+				"tree": 
+					GlobalValues.selectedItems[device_id] = GlobalValues.Item.NATURE
+				_:
+					GlobalValues.selectedItems[device_id] = GlobalValues.Item.NONE
+		DEVICE_ENCODER:
+			var change: int = json_object.get(INPUT_KEY_ENCODER_DIRECTION, 0) if json_object.get(INPUT_KEY_ENCODER_DIRECTION, 0) != null else 0
+			var currentItemOfPlayer = GlobalValues.selectedItems.get(device_id)
+			if (currentItemOfPlayer != null && currentItemOfPlayer != GlobalValues.Item.NONE):
+				var currentAmount = GlobalValues.selectedProgress.get_or_add(currentItemOfPlayer, 0)
+				GlobalValues.selectedProgress[currentItemOfPlayer] = clamp(currentAmount + change, 0, 100)
 		
 	
