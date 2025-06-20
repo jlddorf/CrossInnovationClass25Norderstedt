@@ -1,11 +1,12 @@
 extends Node
 
-@export var websocket_url : String = "localhost:8001" 
+@export var websocket_url : String
 var socket: WebSocketPeer = WebSocketPeer.new()
 @onready var json_parser: JSONParser = $JSON_parser
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print("Starting input client on url %s" % websocket_url)
 	var error: Error = socket.connect_to_url(websocket_url)
 	if error != OK:
 		print("Got error %s when trying to establish socket connection, maybe check whether the server is online" % str(error))

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://o474issdswyw"]
+[gd_scene load_steps=10 format=3 uid="uid://o474issdswyw"]
 
 [ext_resource type="PackedScene" uid="uid://nngar081b03t" path="res://scenes/ui_manager.tscn" id="1_4xfga"]
 [ext_resource type="Texture2D" uid="uid://didddc44ysl1j" path="res://assets/images/map.png" id="2_paxxb"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c5sw5iq2kuyux" path="res://ui/imageButton.tscn" id="4_0cso3"]
 [ext_resource type="PackedScene" uid="uid://jswnggviq36n" path="res://ui/iconIndicator.tscn" id="5_2klcf"]
 [ext_resource type="Texture2D" uid="uid://dyp2woqubc17a" path="res://assets/images/treeIcon.png" id="6_2lpho"]
+[ext_resource type="PackedScene" uid="uid://bp2n0d7ix4dm4" path="res://scenes/socket_manager.tscn" id="7_nakos"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gldc4"]
 albedo_color = Color(0.470076, 0.470076, 0.470076, 1)
@@ -155,3 +156,6 @@ layout_mode = 2
 
 [node name="IconIndicator8" parent="CanvasLayer/Control/PlayerStationRight" instance=ExtResource("5_2klcf")]
 layout_mode = 2
+
+[node name="socket_manager" parent="." instance=ExtResource("7_nakos")]
+websocket_url = "ws://localhost:8090/input/1"

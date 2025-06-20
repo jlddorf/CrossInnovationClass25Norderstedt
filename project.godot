@@ -13,11 +13,8 @@ config_version=5
 config/name="InteractiveMapTechnicalConceptGodot"
 run/main_scene="uid://o474issdswyw"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/bg_color=Color(0.0853021, 0.128541, 0.271507, 1)
 config/icon="res://icon.svg"
-
-[autoload]
-
-SocketManager="*res://scenes/socket_manager.tscn"
 
 [debug]
 
