@@ -16,3 +16,6 @@ func _process(delta: float) -> void:
 
 func changeValue(target: float):
 	self.value = target
+
+func makeIndeterminable(enabled: bool):
+	self.indeterminate = enabled

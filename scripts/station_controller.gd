@@ -21,11 +21,15 @@ func _process(delta: float) -> void:
 		match selectedItem:
 			GlobalValues.Item.NATURE:
 				display.showItemPlaced(GlobalValues.Item.NATURE)
+				amountProgress.makeIndeterminable(false)
 			GlobalValues.Item.NONE:
 				display.showNoItemPlaced()
+				amountProgress.changeValue(0)
+				amountProgress.makeIndeterminable(true)
 		deltaItem = selectedItem
 	if (selectedItem != null && selectedItem != GlobalValues.Item.NONE):
 		var value = GlobalValues.selectedProgress[selectedItem]
 		if (value != null):
 			amountProgress.changeValue(value) 
-	
+		else:
+			amountProgress.changeValue(0)
