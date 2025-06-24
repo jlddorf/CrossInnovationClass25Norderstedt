@@ -26,9 +26,8 @@ grow_vertical = 2
 player_id = 1
 playerContainer = NodePath("../../Viewport/PlayerContainer")
 
-[node name="StationController2" parent="StationControllers" node_paths=PackedStringArray("playerContainer") instance=ExtResource("1_rwj1f")]
+[node name="StationController2" parent="StationControllers" instance=ExtResource("1_rwj1f")]
 player_id = 2
-playerContainer = NodePath("")
 
 [node name="Viewport" type="MarginContainer" parent="."]
 layout_mode = 1

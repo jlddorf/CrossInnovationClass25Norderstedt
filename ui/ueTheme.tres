@@ -1,7 +1,12 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://230ma3pcldq4"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://230ma3pcldq4"]
+
+[ext_resource type="FontFile" uid="uid://dpnlw30s07ynn" path="res://assets/fonts/SourceSans3-Bold.ttf" id="1_vf0qk"]
+[ext_resource type="FontFile" uid="uid://6w1dofqsbche" path="res://assets/fonts/SourceSans3-Regular.ttf" id="2_voggp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1g1kk"]
-bg_color = Color(0.21149, 0.669946, 0.725567, 1)
+bg_color = Color(0.211765, 0.670588, 0.72549, 0.760784)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3qac"]
 content_margin_left = 2.0
@@ -37,3 +42,5 @@ Panel/styles/panel = SubResource("StyleBoxFlat_1g1kk")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_l3qac")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_vf0qk")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_voggp")
+RichTextLabel/fonts/bold_font = ExtResource("1_vf0qk")
+RichTextLabel/fonts/normal_font = ExtResource("2_voggp")

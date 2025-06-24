@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://vb2r20ydhyum"]
+[gd_scene load_steps=7 format=3 uid="uid://vb2r20ydhyum"]
 
 [ext_resource type="Script" uid="uid://q6e0vkjd3c6x" path="res://ui/player_container.gd" id="1_j2y57"]
 [ext_resource type="Texture2D" uid="uid://cs252y6fym48j" path="res://assets/images/Docking Station Sketch.png" id="2_7173t"]
@@ -6,13 +6,6 @@
 [ext_resource type="Script" uid="uid://d2jkeiqffeqoy" path="res://ui/station_Button.gd" id="4_fysbn"]
 [ext_resource type="Theme" uid="uid://230ma3pcldq4" path="res://ui/ueTheme.tres" id="5_mcqbd"]
 [ext_resource type="Script" uid="uid://cewmmmceh1goa" path="res://ui/amountProgress.gd" id="6_mog01"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hst8a"]
-bg_color = Color(0.172833, 0.172833, 0.172833, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
 
 [node name="PlayerContainer" type="MarginContainer"]
 size_flags_horizontal = 4
@@ -27,7 +20,8 @@ custom_minimum_size = Vector2(800, 300)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_hst8a")
+theme = ExtResource("5_mcqbd")
+theme_type_variation = &"playerContainer"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Panel"]
 layout_mode = 1
@@ -102,4 +96,5 @@ size_flags_vertical = 4
 bbcode_enabled = true
 text = "[b]I'm a category[/b]
 This is a very interesting text about this category. So interesting..."
+fit_content = true
 horizontal_alignment = 1
