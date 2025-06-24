@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://nngar081b03t"]
+[gd_scene load_steps=11 format=3 uid="uid://nngar081b03t"]
 
 [ext_resource type="PackedScene" uid="uid://cwa7akeb180pv" path="res://scenes/station_controller.tscn" id="1_rwj1f"]
 [ext_resource type="Texture2D" uid="uid://cs252y6fym48j" path="res://assets/images/Docking Station Sketch.png" id="2_iku3t"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://cewmmmceh1goa" path="res://ui/amountProgress.gd" id="3_gl862"]
 [ext_resource type="Texture2D" uid="uid://b6mcfhruapmvr" path="res://assets/images/Question Mark Sketch.png" id="3_reske"]
 [ext_resource type="Script" uid="uid://d2jkeiqffeqoy" path="res://ui/station_Button.gd" id="4_j2mt3"]
+[ext_resource type="PackedScene" uid="uid://jr81cpde0r8s" path="res://scenes/AchievementRect.tscn" id="7_hst8a"]
+[ext_resource type="Texture2D" uid="uid://dyp2woqubc17a" path="res://assets/images/treeIcon.png" id="8_tanoa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hst8a"]
 bg_color = Color(0.172833, 0.172833, 0.172833, 1)
@@ -114,7 +116,7 @@ stretch_mode = 0
 script = ExtResource("4_j2mt3")
 
 [node name="TopPanel" type="Panel" parent="Viewport"]
-custom_minimum_size = Vector2(1200, 250)
+custom_minimum_size = Vector2(1200, 225)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -138,16 +140,12 @@ theme = ExtResource("2_ixhu3")
 theme_override_constants/separation = 53
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Viewport/TopPanel/TopPanelVbox/MarginContainer/GoalRow"]
-custom_minimum_size = Vector2(125, 125)
+[node name="Target1" parent="Viewport/TopPanel/TopPanelVbox/MarginContainer/GoalRow" instance=ExtResource("7_hst8a")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("3_reske")
-expand_mode = 1
+achievementTexture = ExtResource("8_tanoa")
 
 [node name="TextureRect2" type="TextureRect" parent="Viewport/TopPanel/TopPanelVbox/MarginContainer/GoalRow"]
-custom_minimum_size = Vector2(125, 125)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -155,7 +153,7 @@ texture = ExtResource("3_reske")
 expand_mode = 1
 
 [node name="TextureRect3" type="TextureRect" parent="Viewport/TopPanel/TopPanelVbox/MarginContainer/GoalRow"]
-custom_minimum_size = Vector2(125, 125)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -163,7 +161,7 @@ texture = ExtResource("3_reske")
 expand_mode = 1
 
 [node name="TextureRect4" type="TextureRect" parent="Viewport/TopPanel/TopPanelVbox/MarginContainer/GoalRow"]
-custom_minimum_size = Vector2(125, 125)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -171,7 +169,7 @@ texture = ExtResource("3_reske")
 expand_mode = 1
 
 [node name="TextureRect5" type="TextureRect" parent="Viewport/TopPanel/TopPanelVbox/MarginContainer/GoalRow"]
-custom_minimum_size = Vector2(125, 125)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -179,7 +177,7 @@ texture = ExtResource("3_reske")
 expand_mode = 1
 
 [node name="TextureRect6" type="TextureRect" parent="Viewport/TopPanel/TopPanelVbox/MarginContainer/GoalRow"]
-custom_minimum_size = Vector2(125, 125)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -187,7 +185,7 @@ texture = ExtResource("3_reske")
 expand_mode = 1
 
 [node name="TextureRect7" type="TextureRect" parent="Viewport/TopPanel/TopPanelVbox/MarginContainer/GoalRow"]
-custom_minimum_size = Vector2(125, 125)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -195,7 +193,7 @@ texture = ExtResource("3_reske")
 expand_mode = 1
 
 [node name="HSeparator" type="HSeparator" parent="Viewport/TopPanel/TopPanelVbox"]
-custom_minimum_size = Vector2(1100, 0)
+custom_minimum_size = Vector2(1100, 1)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

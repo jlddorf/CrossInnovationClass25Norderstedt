@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://jr81cpde0r8s"]
+
+[ext_resource type="Texture2D" uid="uid://b6mcfhruapmvr" path="res://assets/images/Question Mark Sketch.png" id="1_v1xyw"]
+[ext_resource type="Script" uid="uid://cwvg4ysfx8f1y" path="res://scenes/achievement_rect.gd" id="2_ted1n"]
+
+[node name="TextureRect" type="TextureRect"]
+custom_minimum_size = Vector2(100, 100)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_v1xyw")
+expand_mode = 1
+script = ExtResource("2_ted1n")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
