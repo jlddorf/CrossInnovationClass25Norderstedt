@@ -12,7 +12,7 @@ const DEVICE_BUTTON: String = "button"
 const DEVICE_ENCODER_BUTTON: String = "encoder_button"
 const DEVICE_RFID_READER: String = "rfid_reader"
 const GlobalValues = preload("res://scripts/globalValues.gd")
-var _currentlySelectedObject: String
+
 # Parses the object and relays it further. The input is expected to be in accordance 
 # with the input specification in the README
 func parse(json_object: Dictionary) -> void:
