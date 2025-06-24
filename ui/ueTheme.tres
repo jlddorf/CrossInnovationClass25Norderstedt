@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://6w1dofqsbche" path="res://assets/fonts/SourceSans3-Regular.ttf" id="2_voggp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1g1kk"]
-bg_color = Color(0.211765, 0.670588, 0.72549, 0.760784)
+bg_color = Color(0.0156863, 0.12549, 0.137255, 0.188235)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 
@@ -13,7 +13,6 @@ content_margin_left = 2.0
 content_margin_top = 2.0
 content_margin_right = 2.0
 content_margin_bottom = 2.0
-bg_color = Color(0.159013, 0.658932, 0.815731, 1)
 border_color = Color(0.992157, 0.0509804, 0.0509804, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
@@ -42,5 +41,6 @@ Panel/styles/panel = SubResource("StyleBoxFlat_1g1kk")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_l3qac")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_vf0qk")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_voggp")
+RichTextLabel/colors/default_color = Color(0.82606, 0.82606, 0.82606, 1)
 RichTextLabel/fonts/bold_font = ExtResource("1_vf0qk")
 RichTextLabel/fonts/normal_font = ExtResource("2_voggp")
