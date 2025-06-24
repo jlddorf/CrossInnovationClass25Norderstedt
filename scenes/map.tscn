@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://o474issdswyw"]
+[gd_scene load_steps=7 format=3 uid="uid://o474issdswyw"]
 
+[ext_resource type="Script" uid="uid://d6jlpupygc1n" path="res://scripts/map.gd" id="1_0cso3"]
 [ext_resource type="PackedScene" uid="uid://nngar081b03t" path="res://scenes/ui_manager.tscn" id="1_4xfga"]
 [ext_resource type="Texture2D" uid="uid://didddc44ysl1j" path="res://assets/images/map.png" id="2_paxxb"]
 [ext_resource type="PackedScene" uid="uid://bp2n0d7ix4dm4" path="res://scenes/socket_manager.tscn" id="7_nakos"]
@@ -11,6 +12,7 @@ albedo_texture = ExtResource("2_paxxb")
 [sub_resource type="PlaneMesh" id="PlaneMesh_0cso3"]
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_0cso3")
 
 [node name="UI_manager" parent="." instance=ExtResource("1_4xfga")]
 
@@ -28,3 +30,6 @@ light_energy = 5.0
 
 [node name="socket_manager" parent="." instance=ExtResource("7_nakos")]
 websocket_url = "ws://localhost:8090/input/1"
+
+[node name="socket_manager2" parent="." instance=ExtResource("7_nakos")]
+websocket_url = "ws://localhost:8090/input/2"

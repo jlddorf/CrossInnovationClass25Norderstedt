@@ -1,8 +1,7 @@
 extends Node
 
 @export var player_id : int
-@export var display: ItemDisplay
-@export var amountProgress: AmountProgress
+@export var playerContainer: PlayerContainer
 
 const GlobalValues = preload("res://scripts/globalValues.gd")
 
@@ -20,16 +19,16 @@ func _process(delta: float) -> void:
 	if (selectedItem != null && selectedItem != deltaItem):
 		match selectedItem:
 			GlobalValues.Item.NATURE:
-				display.showItemPlaced(GlobalValues.Item.NATURE)
-				amountProgress.makeIndeterminable(false)
+				playerContainer.showItemPlaced(GlobalValues.Item.NATURE)
+				playerContainer.makeIndeterminable(false)
 			GlobalValues.Item.NONE:
-				display.showNoItemPlaced()
-				amountProgress.changeValue(0)
-				amountProgress.makeIndeterminable(true)
+				playerContainer.showNoItemPlaced()
+				playerContainer.changeValue(0)
+				playerContainer.makeIndeterminable(true)
 		deltaItem = selectedItem
 	if (selectedItem != null && selectedItem != GlobalValues.Item.NONE):
-		var value = GlobalValues.selectedProgress[selectedItem]
+		var value = GlobalValues.selectedProgress.get(selectedItem)
 		if (value != null):
-			amountProgress.changeValue(value) 
+			playerContainer.changeValue(value) 
 		else:
-			amountProgress.changeValue(0)
+			playerContainer.changeValue(0)
