@@ -1,4 +1,5 @@
 extends Node
+class_name SocketManager
 
 @export var websocket_url : String
 var socket: WebSocketPeer = WebSocketPeer.new()
@@ -30,3 +31,10 @@ func _process(_delta: float) -> void:
 		var code: int = socket.get_close_code()
 		print("Web socket connection closed with code %d" % code)
 		set_process(false)
+		
+func cleanup():
+	socket.close(1000, "Socket manager closed")
+	var status = socket.get_ready_state()
+	while(status != WebSocketPeer.STATE_CLOSED):
+		socket.poll()
+		status = socket.get_ready_state()

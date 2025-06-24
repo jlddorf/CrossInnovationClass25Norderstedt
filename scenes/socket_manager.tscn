@@ -7,3 +7,5 @@
 script = ExtResource("1_bspfj")
 
 [node name="JSON_parser" parent="." instance=ExtResource("2_yypbe")]
+
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
