@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=3 uid="uid://vb2r20ydhyum"]
+
+[ext_resource type="Script" uid="uid://q6e0vkjd3c6x" path="res://ui/player_container.gd" id="1_j2y57"]
+[ext_resource type="Texture2D" uid="uid://cs252y6fym48j" path="res://assets/images/Docking Station Sketch.png" id="2_7173t"]
+[ext_resource type="Texture2D" uid="uid://b6mcfhruapmvr" path="res://assets/images/Question Mark Sketch.png" id="3_6kptq"]
+[ext_resource type="Script" uid="uid://d2jkeiqffeqoy" path="res://ui/station_Button.gd" id="4_fysbn"]
+[ext_resource type="Theme" uid="uid://230ma3pcldq4" path="res://ui/ueTheme.tres" id="5_mcqbd"]
+[ext_resource type="Script" uid="uid://cewmmmceh1goa" path="res://ui/amountProgress.gd" id="6_mog01"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hst8a"]
+bg_color = Color(0.172833, 0.172833, 0.172833, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="PlayerContainer" type="MarginContainer"]
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_j2y57")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(800, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_hst8a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -385.0
+offset_top = -112.0
+offset_right = 385.0
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="PlacedAmountBar" type="ProgressBar" parent="VBoxContainer/Panel/VBoxContainer/HBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(400, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("5_mcqbd")
+show_percentage = false
+indeterminate = true
+editor_preview_indeterminate = false
+script = ExtResource("6_mog01")
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Panel/VBoxContainer/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_7173t")
+expand_mode = 1
+
+[node name="ItemDisplay" type="TextureButton" parent="VBoxContainer/Panel/VBoxContainer/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_6kptq")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("4_fysbn")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(500, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "[b]I'm a category[/b]
+This is a very interesting text about this category. So interesting..."
+horizontal_alignment = 1

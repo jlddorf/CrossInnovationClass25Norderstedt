@@ -1,19 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://nngar081b03t"]
+[gd_scene load_steps=8 format=3 uid="uid://nngar081b03t"]
 
 [ext_resource type="PackedScene" uid="uid://cwa7akeb180pv" path="res://scenes/station_controller.tscn" id="1_rwj1f"]
 [ext_resource type="Theme" uid="uid://230ma3pcldq4" path="res://ui/ueTheme.tres" id="2_ixhu3"]
-[ext_resource type="PackedScene" uid="uid://vb2r20ydhyum" path="res://ui/placerContainer.tscn" id="2_j2mt3"]
+[ext_resource type="PackedScene" uid="uid://vb2r20ydhyum" path="res://ui/playerContainer.tscn" id="2_j2mt3"]
 [ext_resource type="Texture2D" uid="uid://b6mcfhruapmvr" path="res://assets/images/Question Mark Sketch.png" id="3_reske"]
-[ext_resource type="Script" uid="uid://d2jkeiqffeqoy" path="res://ui/station_Button.gd" id="4_j2mt3"]
 [ext_resource type="PackedScene" uid="uid://jr81cpde0r8s" path="res://scenes/AchievementRect.tscn" id="7_hst8a"]
 [ext_resource type="Texture2D" uid="uid://dyp2woqubc17a" path="res://assets/images/treeIcon.png" id="8_tanoa"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hst8a"]
-bg_color = Color(0.172833, 0.172833, 0.172833, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gl862"]
 bg_color = Color(0.25098, 0.25098, 0.25098, 0.87451)
