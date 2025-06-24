@@ -28,7 +28,7 @@ playerContainer = NodePath("../../Viewport/PlayerContainer")
 
 [node name="StationController2" parent="StationControllers" node_paths=PackedStringArray("playerContainer") instance=ExtResource("1_rwj1f")]
 player_id = 2
-playerContainer = NodePath("../../Viewport/PlayerContainer2")
+playerContainer = NodePath("")
 
 [node name="Viewport" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -41,8 +41,72 @@ grow_vertical = 2
 [node name="PlayerContainer" parent="Viewport" instance=ExtResource("2_j2mt3")]
 layout_mode = 2
 
-[node name="PlayerContainer2" parent="Viewport" instance=ExtResource("2_j2mt3")]
+[node name="Control2" type="Control" parent="Viewport"]
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="Control" type="Control" parent="Viewport/Control2"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -400.0
+offset_bottom = 400.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="PlayerContainer2" parent="Viewport/Control2/Control" instance=ExtResource("2_j2mt3")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -150.0
+offset_right = 400.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5708
+pivot_offset = Vector2(400, 150)
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Control3" type="Control" parent="Viewport"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Control" type="Control" parent="Viewport/Control3"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -400.0
+offset_right = 300.0
+offset_bottom = 400.0
+grow_vertical = 2
+
+[node name="PlayerContainer2" parent="Viewport/Control3/Control" instance=ExtResource("2_j2mt3")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -150.0
+offset_right = 400.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+pivot_offset = Vector2(400, 150)
 size_flags_horizontal = 0
 size_flags_vertical = 4
 
