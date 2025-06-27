@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Enums="*res://scripts/globalValues.gd"
+CustomTypes="*res://scripts/custom_types.gd"
 
 [debug]
 
@@ -33,7 +33,6 @@ gdscript/warnings/unsafe_call_argument=1
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
@@ -48,6 +47,10 @@ folder_colors={
 "res://scenes/": "purple",
 "res://scripts/": "blue"
 }
+
+[global_group]
+
+SocketManager="All input sockets"
 
 [input]
 

@@ -1,9 +1,9 @@
 extends TextureButton
 class_name ItemDisplay
 
-const QUESTION_MARK_SKETCH = preload("res://assets/images/Question Mark Sketch.png")
-const TREE_ICON = preload("res://assets/images/treeIcon.png")
-const GlobalValues = preload("res://scripts/globalValues.gd")
+const QUESTION_MARK_SKETCH : Texture2D = preload("res://assets/images/Question Mark Sketch.png")
+const TREE_ICON : Texture2D = preload("res://assets/images/treeIcon.png")
+const CustomTypes = preload("res://scripts/custom_types.gd")
 
 var currentTween : Tween
 # Called when the node enters the scene tree for the first time.
@@ -11,23 +11,19 @@ func _ready() -> void:
 	self.pivot_offset = self.size/2
 	showNoItemPlaced()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-func showItemPlaced(item: GlobalValues.Item):
+func showItemPlaced(item: CustomTypes.Item) -> void:
 	print("Switching to item" + str(item))
 	if (currentTween != null):
 		currentTween.kill()
 	match item:
-		Enums.Item.NATURE:
+		CustomTypes.Item.NATURE:
 			self.texture_normal = TREE_ICON
 	self.rotation_degrees = 0
 	self.scale = Vector2(1.7, 1.7)
 	currentTween = self.create_tween().set_parallel(true)
 	currentTween.tween_property(self, "scale", Vector2(1, 1), 0.3).set_ease(Tween.EASE_IN)
 
-func showNoItemPlaced():
+func showNoItemPlaced() -> void:
 	print("Switching to no item")
 	if (currentTween != null):
 		currentTween.kill()

@@ -11,7 +11,10 @@ const DEVICE_ENCODER: String = "encoder"
 const DEVICE_BUTTON: String = "button"
 const DEVICE_ENCODER_BUTTON: String = "encoder_button"
 const DEVICE_RFID_READER: String = "rfid_reader"
-const GlobalValues = preload("res://scripts/globalValues.gd")
+const CustomTypes = preload("res://scripts/custom_types.gd")
+
+signal item_changed(player_id: int, newItem: CustomTypes.Item)
+signal encoder_changed(player_id: int, change: int)
 
 # Parses the object and relays it further. The input is expected to be in accordance 
 # with the input specification in the README
@@ -28,17 +31,14 @@ func parse(json_object: Dictionary) -> void:
 	match device_type :
 		DEVICE_RFID_READER:
 			var selected_item: String = json_object.get(INPUT_KEY_RFID_CONTENT, "") if json_object.get(INPUT_KEY_RFID_CONTENT, "") != null else ""
-			# TODO replace with actual logic
+			var item : CustomTypes.Item
 			match selected_item:
 				"tree": 
-					GlobalValues.selectedItems[device_id] = GlobalValues.Item.NATURE
-				_:
-					GlobalValues.selectedItems[device_id] = GlobalValues.Item.NONE
+					item = CustomTypes.Item.NATURE
+				_: 
+					item = CustomTypes.Item.NONE
+			item_changed.emit(device_id, item) 
 		DEVICE_ENCODER:
 			var change: int = json_object.get(INPUT_KEY_ENCODER_DIRECTION, 0) if json_object.get(INPUT_KEY_ENCODER_DIRECTION, 0) != null else 0
-			var currentItemOfPlayer = GlobalValues.selectedItems.get(device_id)
-			if (currentItemOfPlayer != null && currentItemOfPlayer != GlobalValues.Item.NONE):
-				var currentAmount = GlobalValues.selectedProgress.get_or_add(currentItemOfPlayer, 0)
-				GlobalValues.selectedProgress[currentItemOfPlayer] = clamp(currentAmount + change, 0, 100)
+			encoder_changed.emit(device_id, change)
 		
-	

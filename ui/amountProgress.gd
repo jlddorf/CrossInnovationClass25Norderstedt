@@ -1,17 +1,13 @@
 extends ProgressBar
 class_name AmountProgress
 
-# Called when the node enters the scene tree for the first time.
+const CustomTypes = preload("res://scripts/custom_types.gd")
+
 func _ready() -> void:
-	pass # Replace with function body.
+	max_value = CustomTypes.MAX_AMOUNT_OF_ONE_ITEM
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-func changeValue(target: float):
+func changeValue(target: float) -> void:
 	self.value = target
 
-func makeIndeterminable(enabled: bool):
+func makeIndeterminable(enabled: bool) -> void:
 	self.indeterminate = enabled

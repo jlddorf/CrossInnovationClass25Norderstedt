@@ -5,9 +5,13 @@ class_name SocketManager
 var socket: WebSocketPeer = WebSocketPeer.new()
 @onready var json_parser: JSONParser = $JSON_parser
 
+signal item_changed(player_id: int, new_item: int)
+signal encoder_changed(player_id: int, change: int)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("Starting input client on url %s" % websocket_url)
+	add_to_group("SocketManager")
 	var error: Error = socket.connect_to_url(websocket_url)
 	if error != OK:
 		print("Got error %s when trying to establish socket connection, maybe check whether the server is online" % str(error))
@@ -32,9 +36,17 @@ func _process(_delta: float) -> void:
 		print("Web socket connection closed with code %d" % code)
 		set_process(false)
 		
-func cleanup():
+func cleanup() -> void:
 	socket.close(1000, "Socket manager closed")
-	var status = socket.get_ready_state()
-	while(status != WebSocketPeer.STATE_CLOSED):
+	var status : WebSocketPeer.State = socket.get_ready_state()
+	var try : int = 0
+	while(status != WebSocketPeer.STATE_CLOSED && try < 100):
 		socket.poll()
 		status = socket.get_ready_state()
+		try += 1
+
+func _on_json_parser_encoder_changed(player_id: int, change: int) -> void:
+	encoder_changed.emit(player_id, change)
+
+func _on_json_parser_item_changed(player_id: int, newItem: int) -> void:
+	item_changed.emit(player_id, newItem)

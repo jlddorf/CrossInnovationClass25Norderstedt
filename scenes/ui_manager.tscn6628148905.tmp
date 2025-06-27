@@ -31,7 +31,6 @@ grow_vertical = 2
 
 [node name="PlayerContainer1" parent="Viewport" groups=["PlayerContainer"] instance=ExtResource("2_j2mt3")]
 layout_mode = 2
-player_id = 1
 
 [node name="Control2" type="Control" parent="Viewport"]
 layout_mode = 2
@@ -68,7 +67,6 @@ rotation = -1.5708
 pivot_offset = Vector2(400, 150)
 size_flags_horizontal = 0
 size_flags_vertical = 4
-player_id = 2
 
 [node name="Control3" type="Control" parent="Viewport"]
 layout_mode = 2
@@ -102,7 +100,6 @@ rotation = 1.5708
 pivot_offset = Vector2(400, 150)
 size_flags_horizontal = 0
 size_flags_vertical = 4
-player_id = 3
 
 [node name="TopPanel" type="Panel" parent="Viewport"]
 custom_minimum_size = Vector2(1200, 225)
