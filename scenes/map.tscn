@@ -1,35 +1,44 @@
-[gd_scene load_steps=7 format=3 uid="uid://o474issdswyw"]
+[gd_scene load_steps=9 format=3 uid="uid://o474issdswyw"]
 
 [ext_resource type="Script" uid="uid://d6jlpupygc1n" path="res://scripts/map.gd" id="1_0cso3"]
 [ext_resource type="PackedScene" uid="uid://nngar081b03t" path="res://scenes/ui_manager.tscn" id="1_4xfga"]
 [ext_resource type="Texture2D" uid="uid://didddc44ysl1j" path="res://assets/images/map.png" id="2_paxxb"]
+[ext_resource type="PackedScene" uid="uid://bd34i6ns0orv2" path="res://scenes/object.tscn" id="5_2klcf"]
 [ext_resource type="PackedScene" uid="uid://bp2n0d7ix4dm4" path="res://scenes/socket_manager.tscn" id="7_nakos"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gldc4"]
-albedo_color = Color(0.470076, 0.470076, 0.470076, 1)
 albedo_texture = ExtResource("2_paxxb")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0cso3"]
+size = Vector2(20, 20)
+
+[sub_resource type="Environment" id="Environment_2klcf"]
+ambient_light_color = Color(0.458405, 0.458405, 0.458405, 1)
+ambient_light_energy = 16.0
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_0cso3")
 
 [node name="UI_manager" parent="." instance=ExtResource("1_4xfga")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Map" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_gldc4")
 mesh = SubResource("PlaneMesh_0cso3")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.02789, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4.35288, 0)
+environment = SubResource("Environment_2klcf")
 projection = 1
+size = 10.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 0)
-light_energy = 5.0
+light_color = Color(0.529067, 0.529067, 0.529067, 1)
 
 [node name="socket_manager" parent="." instance=ExtResource("7_nakos")]
 websocket_url = "ws://localhost:8090/input/1"
 
 [node name="socket_manager2" parent="." instance=ExtResource("7_nakos")]
 websocket_url = "ws://localhost:8090/input/2"
+
+[node name="Object" parent="." instance=ExtResource("5_2klcf")]
