@@ -48,8 +48,9 @@ websocket_url = "ws://localhost:8090/input/1"
 [node name="socket_manager2" parent="SocketManager" groups=["SocketManager"] instance=ExtResource("7_nakos")]
 websocket_url = "ws://localhost:8090/input/2"
 
-[node name="ObjectManager" type="Node" parent="."]
+[node name="ObjectManager" type="Node" parent="." node_paths=PackedStringArray("target_mesh")]
 script = ExtResource("6_nakos")
+target_mesh = NodePath("../Map")
 
 [node name="Object" parent="ObjectManager" instance=ExtResource("5_2klcf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
