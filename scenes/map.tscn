@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://o474issdswyw"]
+[gd_scene load_steps=11 format=3 uid="uid://o474issdswyw"]
 
 [ext_resource type="Script" uid="uid://d6jlpupygc1n" path="res://scripts/map.gd" id="1_0cso3"]
 [ext_resource type="PackedScene" uid="uid://nngar081b03t" path="res://scenes/ui_manager.tscn" id="1_4xfga"]
 [ext_resource type="Script" uid="uid://db1rmbuy1mrpq" path="res://scripts/player_manager.gd" id="2_2lpho"]
 [ext_resource type="Texture2D" uid="uid://didddc44ysl1j" path="res://assets/images/map.png" id="2_paxxb"]
 [ext_resource type="PackedScene" uid="uid://bd34i6ns0orv2" path="res://scenes/object.tscn" id="5_2klcf"]
+[ext_resource type="Script" uid="uid://5sdtyno1chso" path="res://scripts/object_manager.gd" id="6_nakos"]
 [ext_resource type="PackedScene" uid="uid://bp2n0d7ix4dm4" path="res://scenes/socket_manager.tscn" id="7_nakos"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gldc4"]
@@ -47,7 +48,12 @@ websocket_url = "ws://localhost:8090/input/1"
 [node name="socket_manager2" parent="SocketManager" groups=["SocketManager"] instance=ExtResource("7_nakos")]
 websocket_url = "ws://localhost:8090/input/2"
 
-[node name="Object" parent="." instance=ExtResource("5_2klcf")]
+[node name="ObjectManager" type="Node" parent="."]
+script = ExtResource("6_nakos")
+
+[node name="Object" parent="ObjectManager" instance=ExtResource("5_2klcf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+skeleton = NodePath("../..")
 
 [connection signal="update_player_item" from="PlayerManager" to="UI_manager" method="_on_player_manager_update_player_item"]
+[connection signal="update_player_item" from="PlayerManager" to="ObjectManager" method="_on_player_manager_update_player_item"]
