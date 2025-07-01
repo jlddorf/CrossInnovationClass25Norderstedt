@@ -2,12 +2,12 @@ extends TextureButton
 class_name ItemDisplay
 
 const QUESTION_MARK_SKETCH : Texture2D = preload("res://assets/images/Question Mark Sketch.png")
-const CIRCULAR_ECONOMY_ICON = preload("res://assets/images/StationIcons/circularEconomyIcon.png")
-const COMMUNITY_ICON = preload("res://assets/images/StationIcons/communityIcon.png")
-const ENERGY_BUILDING_ICON = preload("res://assets/images/StationIcons/energyBuildingIcon.png")
-const LOCAL_CONSUMPTION_ICON = preload("res://assets/images/StationIcons/localConsumptionIcon.png")
-const MOBILITY_ICON = preload("res://assets/images/StationIcons/mobilityIcon.png")
-const NATURE_ICON = preload("res://assets/images/StationIcons/natureIcon.png")
+const CIRCULAR_ECONOMY_ICON : Texture2D = preload("res://assets/images/StationIcons/circularEconomyIcon.png")
+const COMMUNITY_ICON : Texture2D = preload("res://assets/images/StationIcons/communityIcon.png")
+const ENERGY_BUILDING_ICON : Texture2D = preload("res://assets/images/StationIcons/energyBuildingIcon.png")
+const LOCAL_CONSUMPTION_ICON : Texture2D = preload("res://assets/images/StationIcons/localConsumptionIcon.png")
+const MOBILITY_ICON : Texture2D = preload("res://assets/images/StationIcons/mobilityIcon.png")
+const NATURE_ICON : Texture2D = preload("res://assets/images/StationIcons/natureIcon.png")
 
 const CustomTypes = preload("res://scripts/custom_types.gd")
 

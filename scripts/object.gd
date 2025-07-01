@@ -14,7 +14,7 @@ func remove() -> void:
 	tween.set_ease(Tween.EASE_IN).tween_property(self, "scale", Vector3(0.1, 0.1, 0.1), 0.2)
 	tween.tween_callback(self.queue_free)
 
-func set_item(item: CustomTypes.Item):
+func set_item(item: CustomTypes.Item) -> void:
 	match item:
 		CustomTypes.Item.NATURE:
 			mesh = PlaneMesh.new()
