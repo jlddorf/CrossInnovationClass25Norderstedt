@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://vb2r20ydhyum"]
+[gd_scene load_steps=9 format=3 uid="uid://vb2r20ydhyum"]
 
 [ext_resource type="Script" uid="uid://q6e0vkjd3c6x" path="res://ui/player_container.gd" id="1_j2y57"]
 [ext_resource type="Texture2D" uid="uid://cs252y6fym48j" path="res://assets/images/Docking Station Sketch.png" id="2_7173t"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://d2jkeiqffeqoy" path="res://ui/station_Button.gd" id="4_fysbn"]
 [ext_resource type="Theme" uid="uid://230ma3pcldq4" path="res://ui/ueTheme.tres" id="5_mcqbd"]
 [ext_resource type="Script" uid="uid://cewmmmceh1goa" path="res://ui/amountProgress.gd" id="6_mog01"]
+[ext_resource type="Script" uid="uid://cljr7oqvk7xyg" path="res://ui/info_text.gd" id="7_7173t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2y57"]
 bg_color = Color(0.243137, 0.243137, 0.243137, 0.882353)
@@ -100,7 +101,8 @@ custom_minimum_size = Vector2(800, 150)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_j2y57")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Panel/VBoxContainer/Panel"]
+[node name="InfoText" type="RichTextLabel" parent="VBoxContainer/Panel/VBoxContainer/Panel"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(700, 100)
 layout_mode = 1
 anchors_preset = 8
@@ -121,4 +123,7 @@ bbcode_enabled = true
 text = "[b]Mobilität[/b]
 Mit dem Regler steuerst du den Ausbau der Fahrradwege – ein Beispiel für nachhaltige Fortbewegung in der Stadt.
 Mobilität bedeutet, sich umweltfreundlich zu bewegen – zum Beispiel mit dem Fahrrad, öffentlichen Verkehrsmitteln, in Fahrgemeinschaften oder per Park & Ride. Auch verkehrsberuhigte Zonen wie Spielstraßen gehören dazu."
+fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_7173t")
