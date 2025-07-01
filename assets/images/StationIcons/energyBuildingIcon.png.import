@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyp2woqubc17a"
-path="res://.godot/imported/treeIcon.png-ced723c91374790710ef6a0b60626346.ctex"
+uid="uid://nxwyotynl76u"
+path="res://.godot/imported/energyBuildingIcon.png-bb7d8fe7364813985ff66a700c0232c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/treeIcon.png"
-dest_files=["res://.godot/imported/treeIcon.png-ced723c91374790710ef6a0b60626346.ctex"]
+source_file="res://assets/images/StationIcons/energyBuildingIcon.png"
+dest_files=["res://.godot/imported/energyBuildingIcon.png-bb7d8fe7364813985ff66a700c0232c4.ctex"]
 
 [params]
 

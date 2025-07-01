@@ -33,8 +33,18 @@ func parse(json_object: Dictionary) -> void:
 			var selected_item: String = json_object.get(INPUT_KEY_RFID_CONTENT, "") if json_object.get(INPUT_KEY_RFID_CONTENT, "") != null else ""
 			var item : CustomTypes.Item
 			match selected_item:
-				"tree": 
+				"nature": 
 					item = CustomTypes.Item.NATURE
+				"mobility":
+					item = CustomTypes.Item.MOBILITY
+				"energy_building":
+					item = CustomTypes.Item.ENERGY_BUILDING
+				"community":
+					item = CustomTypes.Item.COMMUNITY
+				"circular_economy":
+					item = CustomTypes.Item.CIRCULAR_ECONOMY
+				"local_consumption":
+					item = CustomTypes.Item.LOCAL_CONSUMPTION
 				_: 
 					item = CustomTypes.Item.NONE
 			item_changed.emit(device_id, item) 

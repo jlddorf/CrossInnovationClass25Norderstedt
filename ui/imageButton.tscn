@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5sw5iq2kuyux"]
 
 [ext_resource type="Theme" uid="uid://230ma3pcldq4" path="res://ui/ueTheme.tres" id="1_42xyh"]
-[ext_resource type="Texture2D" uid="uid://dyp2woqubc17a" path="res://assets/images/treeIcon.png" id="2_42xyh"]
+[ext_resource type="Texture2D" uid="uid://dyp2woqubc17a" path="res://assets/images/StationIcons/natureIcon.png" id="2_42xyh"]
 
 [node name="ImageButton" type="PanelContainer"]
 custom_minimum_size = Vector2(80, 80)

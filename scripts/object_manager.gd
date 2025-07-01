@@ -14,6 +14,7 @@ func _on_player_manager_update_player_item(_player_id: int, item: int, new_amoun
 	# If item difference is greater than 0, place items to balance it out
 	while item_difference > 0:
 		var node : Node3D = OBJECT.instantiate()
+		node.set_item(item)
 		node.position = get_random_coordinate_on_mesh()
 		self.add_child(node)
 		item_difference -= 1
