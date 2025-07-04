@@ -24,7 +24,16 @@ func _on_player_manager_update_player_item(player_id: int, item: int, currentAmo
 		CustomTypes.Item.NATURE:
 			achievement_climate.update_achievement(change)
 			achievement_green.update_achievement(change)
-
-	
-	
-		
+		CustomTypes.Item.MOBILITY:
+			achievement_health.update_achievement(change)
+			achievement_short_ways.update_achievement(change)
+		CustomTypes.Item.ENERGY_BUILDING:
+			achievement_climate.update_achievement(change)
+		CustomTypes.Item.COMMUNITY:
+			achievement_integration.update_achievement(change)
+		CustomTypes.Item.CIRCULAR_ECONOMY:
+			achievement_circular.update_achievement(change)
+			achievement_fairtrade.update_achievement(change)
+		CustomTypes.Item.LOCAL_CONSUMPTION:
+			achievement_climate.update_achievement(change)
+			achievement_fairtrade.update_achievement(change)
