@@ -58,6 +58,7 @@ theme_override_constants/margin_bottom = 20
 
 [node name="PlacedAmountBar" type="ProgressBar" parent="VBoxContainer/Panel/VBoxContainer/HBoxContainer/PlacedAmountMargin"]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(400, 30)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -69,6 +70,7 @@ editor_preview_indeterminate = false
 script = ExtResource("6_mog01")
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="PlacedItemMargin" type="MarginContainer" parent="VBoxContainer/Panel/VBoxContainer/HBoxContainer"]

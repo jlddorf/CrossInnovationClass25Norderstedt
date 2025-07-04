@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://nngar081b03t"]
+[gd_scene load_steps=7 format=3 uid="uid://nngar081b03t"]
 
 [ext_resource type="Script" uid="uid://cstp3l8oikmq4" path="res://ui/ui_manager.gd" id="1_gl862"]
 [ext_resource type="Theme" uid="uid://230ma3pcldq4" path="res://ui/ueTheme.tres" id="2_ixhu3"]
@@ -6,11 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://b6mcfhruapmvr" path="res://assets/images/Question Mark Sketch.png" id="3_reske"]
 [ext_resource type="PackedScene" uid="uid://jr81cpde0r8s" path="res://scenes/AchievementRect.tscn" id="7_hst8a"]
 [ext_resource type="Texture2D" uid="uid://dyp2woqubc17a" path="res://assets/images/StationIcons/natureIcon.png" id="8_tanoa"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gl862"]
-bg_color = Color(0.25098, 0.25098, 0.25098, 0.87451)
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
 
 [node name="UIManager" type="Control"]
 layout_mode = 3
@@ -105,16 +100,23 @@ size_flags_vertical = 4
 player_id = 3
 
 [node name="TopPanel" type="Panel" parent="Viewport"]
-custom_minimum_size = Vector2(1200, 225)
+custom_minimum_size = Vector2(1200, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_gl862")
+theme = ExtResource("2_ixhu3")
+theme_type_variation = &"TopPanel"
 
 [node name="TopPanelVbox" type="VBoxContainer" parent="Viewport/TopPanel"]
-layout_mode = 0
-offset_right = 1198.0
-offset_bottom = 129.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -600.0
+offset_right = 600.0
+offset_bottom = 232.0
+grow_horizontal = 2
+theme = ExtResource("2_ixhu3")
 
 [node name="MarginContainer" type="MarginContainer" parent="Viewport/TopPanel/TopPanelVbox"]
 layout_mode = 2
@@ -180,19 +182,3 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("3_reske")
 expand_mode = 1
-
-[node name="HSeparator" type="HSeparator" parent="Viewport/TopPanel/TopPanelVbox"]
-custom_minimum_size = Vector2(1100, 1)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Viewport/TopPanel/TopPanelVbox"]
-custom_minimum_size = Vector2(1200, 90)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-bbcode_enabled = true
-text = "[b]Hier könnte Ihr Fun-Fact stehen[/b]"
-horizontal_alignment = 1
-vertical_alignment = 1
