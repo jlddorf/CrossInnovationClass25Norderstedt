@@ -15,3 +15,5 @@ const INFO_CIRCULAR_ECONOMY: String = "Mit dem Regler förderst du den bewussten
 const INFO_LOCAL_CONSUMPTION: String = "Mit dem Regler stärkst du den bewussten Einkauf vor Ort.
 [b]Lokaler Konsum[/b] steht für faire, regionale und umweltfreundliche Produkte. Durch den Kauf saisonaler Lebensmittel, die Unterstützung von Fairtrade-Geschäften, unverpacktes Einkaufen oder die Nutzung öffentlicher Wasserstationen wird der Alltag nachhaltiger und ressourcenschonender gestaltet. Auch die Mitgliedschaft in einer CSA (gemeinschaftsgetragene Landwirtschaft) gehört dazu – dabei teilen sich Verbraucherinnen und Landwirtinnen Verantwortung, Kosten und Ernte."
 const INFO_NONE : String = "[b]Bitte platziere ein Objekt auf der Station um zu beginnen[/b]"
+
+const ACHIEVEMENT_THRESHOLD : int = 100

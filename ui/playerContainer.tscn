@@ -95,7 +95,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("3_6kptq")
 ignore_texture_size = true
-stretch_mode = 0
+stretch_mode = 5
 script = ExtResource("4_fysbn")
 
 [node name="Panel" type="Panel" parent="VBoxContainer/Panel/VBoxContainer"]

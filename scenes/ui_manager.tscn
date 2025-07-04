@@ -1,11 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://nngar081b03t"]
+[gd_scene load_steps=11 format=3 uid="uid://nngar081b03t"]
 
 [ext_resource type="Script" uid="uid://cstp3l8oikmq4" path="res://ui/ui_manager.gd" id="1_gl862"]
 [ext_resource type="Theme" uid="uid://230ma3pcldq4" path="res://ui/ueTheme.tres" id="2_ixhu3"]
 [ext_resource type="PackedScene" uid="uid://vb2r20ydhyum" path="res://ui/playerContainer.tscn" id="2_j2mt3"]
-[ext_resource type="Texture2D" uid="uid://b6mcfhruapmvr" path="res://assets/images/Question Mark Sketch.png" id="3_reske"]
+[ext_resource type="Texture2D" uid="uid://dbdph0w8m31j3" path="res://assets/images/StationIcons/communityIcon.png" id="5_jo33p"]
+[ext_resource type="Texture2D" uid="uid://nxwyotynl76u" path="res://assets/images/StationIcons/energyBuildingIcon.png" id="6_hii27"]
+[ext_resource type="Texture2D" uid="uid://dmupi22fhaoi5" path="res://assets/images/StationIcons/localConsumptionIcon.png" id="7_2oyku"]
 [ext_resource type="PackedScene" uid="uid://jr81cpde0r8s" path="res://scenes/AchievementRect.tscn" id="7_hst8a"]
+[ext_resource type="Texture2D" uid="uid://bki10nv822at0" path="res://assets/images/StationIcons/mobilityIcon.png" id="8_ipats"]
 [ext_resource type="Texture2D" uid="uid://dyp2woqubc17a" path="res://assets/images/StationIcons/natureIcon.png" id="8_tanoa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jo33p"]
+font_size = 50
 
 [node name="UIManager" type="Control"]
 layout_mode = 3
@@ -99,7 +105,10 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 player_id = 3
 
-[node name="TopPanel" type="Panel" parent="Viewport"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Viewport"]
+layout_mode = 2
+
+[node name="TopPanel" type="Panel" parent="Viewport/VBoxContainer"]
 custom_minimum_size = Vector2(1200, 200)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -107,7 +116,7 @@ size_flags_vertical = 0
 theme = ExtResource("2_ixhu3")
 theme_type_variation = &"TopPanel"
 
-[node name="TopPanelVbox" type="VBoxContainer" parent="Viewport/TopPanel"]
+[node name="TopPanelVbox" type="VBoxContainer" parent="Viewport/VBoxContainer/TopPanel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -118,67 +127,56 @@ offset_bottom = 232.0
 grow_horizontal = 2
 theme = ExtResource("2_ixhu3")
 
-[node name="MarginContainer" type="MarginContainer" parent="Viewport/TopPanel/TopPanelVbox"]
+[node name="MarginContainer" type="MarginContainer" parent="Viewport/VBoxContainer/TopPanel/TopPanelVbox"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_bottom = 10
 
-[node name="GoalRow" type="HBoxContainer" parent="Viewport/TopPanel/TopPanelVbox/MarginContainer"]
+[node name="GoalRow" type="HBoxContainer" parent="Viewport/VBoxContainer/TopPanel/TopPanelVbox/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("2_ixhu3")
 theme_override_constants/separation = 53
 alignment = 1
 
-[node name="Target1" parent="Viewport/TopPanel/TopPanelVbox/MarginContainer/GoalRow" instance=ExtResource("7_hst8a")]
+[node name="AchievementClimate" parent="Viewport/VBoxContainer/TopPanel/TopPanelVbox/MarginContainer/GoalRow" instance=ExtResource("7_hst8a")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="AchievementHealth" parent="Viewport/VBoxContainer/TopPanel/TopPanelVbox/MarginContainer/GoalRow" instance=ExtResource("7_hst8a")]
+unique_name_in_owner = true
+layout_mode = 2
+achievementTexture = ExtResource("5_jo33p")
+
+[node name="AchievementGreen" parent="Viewport/VBoxContainer/TopPanel/TopPanelVbox/MarginContainer/GoalRow" instance=ExtResource("7_hst8a")]
+unique_name_in_owner = true
+layout_mode = 2
+achievementTexture = ExtResource("6_hii27")
+
+[node name="AchievementIntegration" parent="Viewport/VBoxContainer/TopPanel/TopPanelVbox/MarginContainer/GoalRow" instance=ExtResource("7_hst8a")]
+unique_name_in_owner = true
+layout_mode = 2
+achievementTexture = ExtResource("7_2oyku")
+
+[node name="AchievementShortWays" parent="Viewport/VBoxContainer/TopPanel/TopPanelVbox/MarginContainer/GoalRow" instance=ExtResource("7_hst8a")]
+unique_name_in_owner = true
+layout_mode = 2
+achievementTexture = ExtResource("8_ipats")
+
+[node name="AchievementCircular" parent="Viewport/VBoxContainer/TopPanel/TopPanelVbox/MarginContainer/GoalRow" instance=ExtResource("7_hst8a")]
+unique_name_in_owner = true
 layout_mode = 2
 achievementTexture = ExtResource("8_tanoa")
 
-[node name="TextureRect2" type="TextureRect" parent="Viewport/TopPanel/TopPanelVbox/MarginContainer/GoalRow"]
-custom_minimum_size = Vector2(100, 100)
+[node name="AchievementFairtrade" parent="Viewport/VBoxContainer/TopPanel/TopPanelVbox/MarginContainer/GoalRow" instance=ExtResource("7_hst8a")]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("3_reske")
-expand_mode = 1
+achievementTexture = ExtResource("7_2oyku")
 
-[node name="TextureRect3" type="TextureRect" parent="Viewport/TopPanel/TopPanelVbox/MarginContainer/GoalRow"]
-custom_minimum_size = Vector2(100, 100)
+[node name="LimitCounter" type="Label" parent="Viewport/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("3_reske")
-expand_mode = 1
-
-[node name="TextureRect4" type="TextureRect" parent="Viewport/TopPanel/TopPanelVbox/MarginContainer/GoalRow"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("3_reske")
-expand_mode = 1
-
-[node name="TextureRect5" type="TextureRect" parent="Viewport/TopPanel/TopPanelVbox/MarginContainer/GoalRow"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("3_reske")
-expand_mode = 1
-
-[node name="TextureRect6" type="TextureRect" parent="Viewport/TopPanel/TopPanelVbox/MarginContainer/GoalRow"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("3_reske")
-expand_mode = 1
-
-[node name="TextureRect7" type="TextureRect" parent="Viewport/TopPanel/TopPanelVbox/MarginContainer/GoalRow"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("3_reske")
-expand_mode = 1
+text = "100"
+label_settings = SubResource("LabelSettings_jo33p")
