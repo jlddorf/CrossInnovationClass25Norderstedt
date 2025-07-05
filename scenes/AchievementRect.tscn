@@ -20,3 +20,4 @@ stretch_mode = 5
 script = ExtResource("2_ted1n")
 
 [connection signal="ready" from="AchievementTexture" to="AchievementTexture" method="_on_ready"]
+[connection signal="tree_entered" from="AchievementTexture" to="AchievementTexture" method="_on_tree_entered" flags=3]
