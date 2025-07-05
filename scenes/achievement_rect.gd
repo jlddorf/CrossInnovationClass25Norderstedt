@@ -6,12 +6,6 @@ var achievementTween: Tween
 func _ready() -> void:
 	pivot_offset = size / 2
 
-var done = false
-func _process(delta: float) -> void:
-	if !done:
-		mark_granted()
-		done = true
-
 func mark_granted() -> void:
 	achievementTween = self.create_tween()
 	var viewport_center : Vector2 = get_viewport_rect().get_center()
