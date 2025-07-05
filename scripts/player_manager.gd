@@ -29,8 +29,8 @@ func change_selected_amount_of_player(player_id: int, change: int) -> void:
 		var player_item : CustomTypes.Item = selected_items.get_or_add(player_id, CustomTypes.Item.NONE)
 		if (player_item != CustomTypes.Item.NONE):
 			item_progress[player_item] = clamp(item_amount + change, 0, CustomTypes.MAX_AMOUNT_OF_ONE_ITEM)
-			if (item_amount + change < 0 || item_amount + change > CustomTypes.MAX_AMOUNT_OF_ONE_ITEM):
-				change = 0
+			change = clamp(change, -item_amount, CustomTypes.MAX_AMOUNT_OF_ONE_ITEM - item_amount)
+			item_amount += change
 			emit_item_update(player_id, change)
 
 func change_item_of_player(player_id: int, item: CustomTypes.Item) -> void:

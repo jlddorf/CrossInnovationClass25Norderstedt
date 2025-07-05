@@ -8,22 +8,22 @@ const OBJECT : PackedScene = preload("res://scenes/object.tscn")
 var placed_items: Dictionary[CustomTypes.Item, Array]
 var rng : RandomNumberGenerator = RandomNumberGenerator.new()
 
-func _on_player_manager_update_player_item(_player_id: int, item: int, new_amount: int, _changed: int) -> void:
+func _on_player_manager_update_player_item(_player_id: int, item: int, _new_amount: int, changed: int) -> void:
 	var itemList: Array = placed_items.get_or_add(item, Array()) as Array
-	var item_difference: int = new_amount - itemList.size()
+	#var item_difference: int = new_amount - itemList.size()
 	# If item difference is greater than 0, place items to balance it out
-	while item_difference > 0:
+	while changed > 0:
 		var node : MapObject = OBJECT.instantiate()
 		node.set_item(item)
 		node.position = get_random_coordinate_on_mesh()
 		self.add_child(node)
-		item_difference -= 1
+		changed -= 1
 		placed_items[item].append(node)
 	# If item difference is less than 0, remove items to balance it out
-	while item_difference < 0:
+	while changed < 0:
 		var last_item: MapObject = itemList.pop_back() as MapObject
 		last_item.remove()
-		item_difference += 1
+		changed += 1
 		
 func get_random_coordinate_on_mesh() -> Vector3:
 	var size : Vector3 = target_mesh.mesh.get_aabb().size.abs()
