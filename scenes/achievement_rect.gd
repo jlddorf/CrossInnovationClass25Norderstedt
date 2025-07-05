@@ -2,7 +2,7 @@ extends TextureRect
 class_name AchievementTexture
 
 var default_position : Vector2
-var animationRunning = false
+var animationRunning : bool = false
 
 func _ready() -> void:
 	pivot_offset = size / 2
@@ -19,7 +19,7 @@ func mark_granted() -> void:
 		achievementTween.tween_property(self, "global_position", default_position, 0.5).from(viewport_center)
 		animationRunning = false
 		
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	default_position = global_position
 	if (default_position != Vector2(0,0)):
 		set_process(false)
