@@ -17,4 +17,5 @@ func update_achievement(change: int) -> void:
 	var temp: int = currentPoints
 	currentPoints += change
 	if (temp < Constants.ACHIEVEMENT_THRESHOLD && currentPoints >= Constants.ACHIEVEMENT_THRESHOLD):
+		print("updating achievement")
 		_achievement_texture.mark_granted()
