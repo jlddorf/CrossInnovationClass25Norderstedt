@@ -1,6 +1,7 @@
 shader_type canvas_item;
 
 uniform float progress;
+uniform float randOffset;
 
 void vertex() {
 	// Called for every vertex the material is visible on.
@@ -8,7 +9,8 @@ void vertex() {
 
 void fragment() {
 	vec4 input_color = texture(TEXTURE, UV);
-	if (UV.y < 1.0 - progress) {
+	float updatedProgress = progress + 0.05 * sin(TIME * 4.0 + randOffset + UV.x);
+	if (UV.y < 1.0 - updatedProgress) {
 		float average_color = (input_color.r + input_color.g + input_color.b) / 3.0;
 		COLOR = vec4(average_color, average_color, average_color, input_color.a);
 	}

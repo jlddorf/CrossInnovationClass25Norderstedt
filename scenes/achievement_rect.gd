@@ -6,7 +6,9 @@ var animationRunning : bool = false
 
 func _ready() -> void:
 	pivot_offset = size / 2
-	update_process(0.0)
+	var canvas_material : ShaderMaterial = material
+	var rng = RandomNumberGenerator.new()
+	canvas_material.set_shader_parameter("randOffset", rng.randf() * 100)
 	
 
 func mark_granted() -> void:
