@@ -47,6 +47,9 @@ websocket_url = "ws://localhost:8090/input/1"
 [node name="socket_manager2" parent="SocketManager" groups=["SocketManager"] instance=ExtResource("7_nakos")]
 websocket_url = "ws://localhost:8090/input/2"
 
+[node name="socket_manager4" parent="SocketManager" groups=["SocketManager"] instance=ExtResource("7_nakos")]
+websocket_url = "ws://localhost:8090/input/3"
+
 [node name="ObjectManager" type="Node" parent="." node_paths=PackedStringArray("target_mesh")]
 script = ExtResource("6_nakos")
 target_mesh = NodePath("../Map")

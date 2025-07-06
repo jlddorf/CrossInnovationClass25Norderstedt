@@ -6,6 +6,7 @@ var animationRunning : bool = false
 
 func _ready() -> void:
 	pivot_offset = size / 2
+	update_process(0.0)
 	
 
 func mark_granted() -> void:
@@ -19,6 +20,11 @@ func mark_granted() -> void:
 		achievementTween.tween_property(self, "global_position", default_position, 0.5).from(viewport_center)
 		animationRunning = false
 		
+func update_process(percent: float) -> void:
+	print(str(percent))
+	var canvas_material : ShaderMaterial = material
+	canvas_material.set_shader_parameter("progress", percent)
+	
 func _process(_delta: float) -> void:
 	default_position = global_position
 	if (default_position != Vector2(0,0)):

@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://jr81cpde0r8s"]
+[gd_scene load_steps=6 format=3 uid="uid://jr81cpde0r8s"]
 
 [ext_resource type="Script" uid="uid://dul2afavf8ej5" path="res://scripts/achievement_rect.gd" id="1_ted1n"]
 [ext_resource type="Texture2D" uid="uid://bvi2vbytkjjpv" path="res://assets/images/StationIcons/circularEconomyIcon.png" id="2_ho1xy"]
 [ext_resource type="Script" uid="uid://cwvg4ysfx8f1y" path="res://scenes/achievement_rect.gd" id="2_ted1n"]
+[ext_resource type="Shader" uid="uid://d342kqara7xxi" path="res://shader/AchievementRect.gdshader" id="3_fares"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k6j82"]
+resource_local_to_scene = true
+shader = ExtResource("3_fares")
+shader_parameter/progress = 0.0
 
 [node name="AchievementRect" type="Container"]
 custom_minimum_size = Vector2(100, 100)
@@ -10,6 +16,7 @@ script = ExtResource("1_ted1n")
 achievementTexture = ExtResource("2_ho1xy")
 
 [node name="AchievementTexture" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_k6j82")
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
