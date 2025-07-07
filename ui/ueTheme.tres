@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://6w1dofqsbche" path="res://assets/fonts/SourceSans3-Regular.ttf" id="2_voggp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ni68y"]
-bg_color = Color(0.46334, 0.632088, 0.692356, 0.458824)
+bg_color = Color(0.6, 0.6, 0.6, 0)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 
@@ -37,10 +37,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h13bp"]
-bg_color = Color(0.494045, 0.635532, 0.600621, 1)
-border_width_left = 6
-border_width_right = 6
-border_width_bottom = 6
+bg_color = Color(0, 0.282353, 0.576471, 0.780392)
 border_color = Color(0.223529, 0.611765, 0.709804, 0.368627)
 border_blend = true
 corner_radius_bottom_right = 20
@@ -52,7 +49,7 @@ PanelContainer/styles/panel = SubResource("StyleBoxFlat_l3qac")
 PlayerPanel/base_type = &"Panel"
 ProgressBar/styles/background = SubResource("StyleBoxFlat_vf0qk")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_voggp")
-RichTextLabel/colors/default_color = Color(0.82606, 0.82606, 0.82606, 1)
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/fonts/bold_font = ExtResource("1_vf0qk")
 RichTextLabel/fonts/normal_font = ExtResource("2_voggp")
 TopPanel/base_type = &"Panel"

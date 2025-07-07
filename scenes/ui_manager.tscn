@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://nngar081b03t"]
+[gd_scene load_steps=13 format=3 uid="uid://nngar081b03t"]
 
 [ext_resource type="Script" uid="uid://cstp3l8oikmq4" path="res://ui/ui_manager.gd" id="1_gl862"]
 [ext_resource type="Theme" uid="uid://230ma3pcldq4" path="res://ui/ueTheme.tres" id="2_ixhu3"]
@@ -10,9 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://bki10nv822at0" path="res://assets/images/StationIcons/mobilityIcon.png" id="8_ipats"]
 [ext_resource type="Texture2D" uid="uid://dyp2woqubc17a" path="res://assets/images/StationIcons/natureIcon.png" id="8_tanoa"]
 [ext_resource type="Texture2D" uid="uid://bblwvekyxohx8" path="res://assets/images/Nordercoin.png" id="10_hii27"]
+[ext_resource type="FontFile" uid="uid://dpnlw30s07ynn" path="res://assets/fonts/SourceSans3-Bold.ttf" id="11_2oyku"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jo33p"]
+font = ExtResource("11_2oyku")
 font_size = 50
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
 
 [node name="UIManager" type="Control"]
 layout_mode = 3
@@ -182,13 +186,22 @@ size_flags_vertical = 4
 
 [node name="CoinIcon" type="TextureRect" parent="Viewport/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture = ExtResource("10_hii27")
-expand_mode = 3
+expand_mode = 1
+stretch_mode = 5
 
-[node name="LimitCounter" type="Label" parent="Viewport/VBoxContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Viewport/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="LimitCounter" type="Label" parent="Viewport/VBoxContainer/HBoxContainer/MarginContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(82.96, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "100"
 label_settings = SubResource("LabelSettings_jo33p")
+horizontal_alignment = 1
+clip_text = true
