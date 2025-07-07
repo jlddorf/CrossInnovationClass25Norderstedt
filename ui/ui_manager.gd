@@ -12,18 +12,19 @@ const CustomTypes = preload("res://scripts/custom_types.gd")
 @onready var achievement_fairtrade: AchievementRect = %AchievementFairtrade
 
 var all_containers : Array[Node]
+@onready var coin_icon: TextureRect = %CoinIcon
 
 func _ready() -> void:
 	all_containers = get_tree().get_nodes_in_group("PlayerContainer")
-	limit_counter.text = "0"
+	limit_counter.text = str(Constants.ACHIEVEMENT_THRESHOLD)
 	
 
 func _on_player_manager_update_player_item(player_id: int, item: int, currentAmount: int, change: int) -> void:
 	var player_container : Array[Node] = all_containers.filter(func(container: PlayerContainer) -> bool: return container.player_id == player_id)
 	for node: PlayerContainer in player_container:
 		node.update_item_display(item, currentAmount)
-	limit_counter.text = str(currentAmount)
-	var counter_position: Vector2 = limit_counter.global_position
+	limit_counter.text = str(Constants.ACHIEVEMENT_THRESHOLD - currentAmount)
+	var counter_position: Vector2 = coin_icon.global_position + coin_icon.size / 2
 	match item:
 		CustomTypes.Item.NATURE:
 			achievement_climate.update_achievement(change, counter_position)

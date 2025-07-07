@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://nngar081b03t"]
+[gd_scene load_steps=12 format=3 uid="uid://nngar081b03t"]
 
 [ext_resource type="Script" uid="uid://cstp3l8oikmq4" path="res://ui/ui_manager.gd" id="1_gl862"]
 [ext_resource type="Theme" uid="uid://230ma3pcldq4" path="res://ui/ueTheme.tres" id="2_ixhu3"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://jr81cpde0r8s" path="res://scenes/AchievementRect.tscn" id="7_hst8a"]
 [ext_resource type="Texture2D" uid="uid://bki10nv822at0" path="res://assets/images/StationIcons/mobilityIcon.png" id="8_ipats"]
 [ext_resource type="Texture2D" uid="uid://dyp2woqubc17a" path="res://assets/images/StationIcons/natureIcon.png" id="8_tanoa"]
+[ext_resource type="Texture2D" uid="uid://bblwvekyxohx8" path="res://assets/images/Nordercoin.png" id="10_hii27"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jo33p"]
 font_size = 50
@@ -174,7 +175,18 @@ unique_name_in_owner = true
 layout_mode = 2
 achievementTexture = ExtResource("7_2oyku")
 
-[node name="LimitCounter" type="Label" parent="Viewport/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Viewport/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="CoinIcon" type="TextureRect" parent="Viewport/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("10_hii27")
+expand_mode = 3
+
+[node name="LimitCounter" type="Label" parent="Viewport/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4

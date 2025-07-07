@@ -21,7 +21,7 @@ func _ready() -> void:
 		
 func emit_item_update(player_id: int, change: int) -> void:
 	var current_item : CustomTypes.Item = selected_items.get(player_id, CustomTypes.Item.NONE)
-	var current_amount : int = item_progress.get(current_item, 0)
+	var current_amount : int = item_amount
 	update_player_item.emit(player_id, current_item, current_amount, change)
 		
 func change_selected_amount_of_player(player_id: int, change: int) -> void:

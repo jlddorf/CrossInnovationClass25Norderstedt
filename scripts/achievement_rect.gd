@@ -4,6 +4,7 @@ class_name AchievementRect
 
 @export var achievementTexture : Texture2D
 @onready var _achievement_texture: AchievementTexture = $AchievementTexture
+@onready var coin_icon: TextureRect = %CoinIcon
 
 const POINT_PARTICLE: PackedScene = preload("res://scenes/point_particle.tscn")
 
@@ -30,7 +31,7 @@ func update_achievement(change: int, counter_position: Vector2) -> void:
 	elif change < 0:
 		node.global_position = counter_position
 		self.add_child(node)
-		tween.tween_property(node, "global_position", _achievement_texture.global_position + _achievement_texture.size / 2, 0.2).from(counter_position)
+		tween.tween_property(node, "global_position", counter_position, 0.2).from(_achievement_texture.global_position + _achievement_texture.size / 2)
 	tween.tween_callback(update_achievement_value.bind(change))
 	tween.tween_callback(node.queue_free)
 
