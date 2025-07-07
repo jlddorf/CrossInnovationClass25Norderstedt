@@ -23,20 +23,21 @@ func _on_player_manager_update_player_item(player_id: int, item: int, currentAmo
 	for node: PlayerContainer in player_container:
 		node.update_item_display(item, currentAmount)
 	limit_counter.text = str(currentAmount)
+	var counter_position: Vector2 = limit_counter.global_position
 	match item:
 		CustomTypes.Item.NATURE:
-			achievement_climate.update_achievement(change)
-			achievement_green.update_achievement(change)
+			achievement_climate.update_achievement(change, counter_position)
+			achievement_green.update_achievement(change, counter_position)
 		CustomTypes.Item.MOBILITY:
-			achievement_health.update_achievement(change)
-			achievement_short_ways.update_achievement(change)
+			achievement_health.update_achievement(change, counter_position)
+			achievement_short_ways.update_achievement(change, counter_position)
 		CustomTypes.Item.ENERGY_BUILDING:
-			achievement_climate.update_achievement(change)
+			achievement_climate.update_achievement(change, counter_position)
 		CustomTypes.Item.COMMUNITY:
-			achievement_integration.update_achievement(change)
+			achievement_integration.update_achievement(change, counter_position)
 		CustomTypes.Item.CIRCULAR_ECONOMY:
-			achievement_circular.update_achievement(change)
-			achievement_fairtrade.update_achievement(change)
+			achievement_circular.update_achievement(change, counter_position)
+			achievement_fairtrade.update_achievement(change, counter_position)
 		CustomTypes.Item.LOCAL_CONSUMPTION:
-			achievement_climate.update_achievement(change)
-			achievement_fairtrade.update_achievement(change)
+			achievement_climate.update_achievement(change, counter_position)
+			achievement_fairtrade.update_achievement(change, counter_position)

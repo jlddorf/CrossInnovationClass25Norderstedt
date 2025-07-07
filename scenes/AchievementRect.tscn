@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://jr81cpde0r8s"]
+[gd_scene load_steps=9 format=3 uid="uid://jr81cpde0r8s"]
 
 [ext_resource type="Script" uid="uid://dul2afavf8ej5" path="res://scripts/achievement_rect.gd" id="1_ted1n"]
 [ext_resource type="Texture2D" uid="uid://bvi2vbytkjjpv" path="res://assets/images/StationIcons/circularEconomyIcon.png" id="2_ho1xy"]
 [ext_resource type="Script" uid="uid://cwvg4ysfx8f1y" path="res://scenes/achievement_rect.gd" id="2_ted1n"]
 [ext_resource type="Shader" uid="uid://d342kqara7xxi" path="res://shader/AchievementRect.gdshader" id="3_fares"]
+[ext_resource type="AudioStream" uid="uid://cj6d4edbnem42" path="res://assets/sound/CrossInnoPlaceSound.wav" id="5_k6j82"]
+[ext_resource type="AudioStream" uid="uid://bc0k25we1bujq" path="res://assets/sound/coin.wav" id="5_wsmqc"]
+[ext_resource type="AudioStream" uid="uid://cwiulvr3vupu3" path="res://assets/sound/video-game-bonus-323603.mp3" id="6_fuepx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k6j82"]
 resource_local_to_scene = true
@@ -26,6 +29,21 @@ texture = ExtResource("2_ho1xy")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("2_ted1n")
+
+[node name="AddPointPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_wsmqc")
+volume_db = -8.35
+
+[node name="TakePointPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_k6j82")
+volume_db = -8.35
+
+[node name="GrantAchievementPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_fuepx")
+volume_db = -8.35
 
 [connection signal="ready" from="AchievementTexture" to="AchievementTexture" method="_on_ready"]
 [connection signal="tree_entered" from="AchievementTexture" to="AchievementTexture" method="_on_tree_entered" flags=3]
