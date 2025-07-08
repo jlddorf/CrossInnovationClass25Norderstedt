@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://vb2r20ydhyum"]
+[gd_scene load_steps=10 format=3 uid="uid://vb2r20ydhyum"]
 
 [ext_resource type="Script" uid="uid://q6e0vkjd3c6x" path="res://ui/player_container.gd" id="1_j2y57"]
 [ext_resource type="Texture2D" uid="uid://cs252y6fym48j" path="res://assets/images/Docking Station Sketch.png" id="2_7173t"]
@@ -8,8 +8,10 @@
 [ext_resource type="Script" uid="uid://cewmmmceh1goa" path="res://ui/amountProgress.gd" id="6_mog01"]
 [ext_resource type="Script" uid="uid://cljr7oqvk7xyg" path="res://ui/info_text.gd" id="7_7173t"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7173t"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2y57"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(1, 1, 1, 0.52549)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
@@ -84,6 +86,7 @@ size_flags_horizontal = 6
 size_flags_vertical = 4
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/Panel/VBoxContainer/HBoxContainer/PlacedItemMargin"]
+material = SubResource("ShaderMaterial_7173t")
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 4

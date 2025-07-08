@@ -37,7 +37,6 @@ window/size/viewport_height=1080
 window/size/mode=3
 window/size/borderless=true
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 
 [editor]
 
@@ -92,5 +91,6 @@ select_icon_none3={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=2
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
