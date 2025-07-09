@@ -15,6 +15,13 @@ var target_mesh_size: Vector2
 
 func _ready() -> void:
 	allowed_positions[CustomTypes.Item.NATURE] = Constants.PLACEMENT_POINTS_NATURE
+	allowed_positions[CustomTypes.Item.MOBILITY] = Constants.PLACEMENT_POINTS_STREETS
+	allowed_positions[CustomTypes.Item.ENERGY_BUILDING] = Constants.PLACEABLE_POINTS_BUILDINGS
+	var buildings_and_nature : PackedVector2Array = PackedVector2Array(Constants.PLACEABLE_POINTS_BUILDINGS)
+	buildings_and_nature.append_array(Constants.PLACEMENT_POINTS_NATURE)
+	allowed_positions[CustomTypes.Item.COMMUNITY] = buildings_and_nature
+	allowed_positions[CustomTypes.Item.CIRCULAR_ECONOMY] = Constants.PLACEABLE_POINTS_BUILDINGS
+	allowed_positions[CustomTypes.Item.LOCAL_CONSUMPTION] = Constants.PLACEABLE_POINTS_BUILDINGS
 	var placement_mesh: PlaneMesh = target_mesh.mesh
 	var target_mesh_material: StandardMaterial3D = placement_mesh.material
 	target_mesh_size = placement_mesh.size

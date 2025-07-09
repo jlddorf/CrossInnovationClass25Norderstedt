@@ -25,19 +25,20 @@ func set_item(item: CustomTypes.Item) -> void:
 			objectMesh.size.x = NATURE_ICON.get_size().aspect()
 		CustomTypes.Item.MOBILITY:
 			material.albedo_texture = MOBILITY_ICON
-			objectMesh.size.x = NATURE_ICON.get_size().aspect()
+			objectMesh.size.x = MOBILITY_ICON.get_size().aspect()
+			objectMesh.size *= Vector2(0.7, 0.7)
 		CustomTypes.Item.ENERGY_BUILDING:
 			material.albedo_texture = ENERGY_BUILDING_ICON
-			objectMesh.size.x = NATURE_ICON.get_size().aspect()
+			objectMesh.size.x = ENERGY_BUILDING_ICON.get_size().aspect()
 		CustomTypes.Item.COMMUNITY:
 			material.albedo_texture = COMMUNITY_ICON
-			objectMesh.size.x = NATURE_ICON.get_size().aspect()
+			objectMesh.size.x = COMMUNITY_ICON.get_size().aspect()
 		CustomTypes.Item.CIRCULAR_ECONOMY:
 			material.albedo_texture = CIRCULAR_ECONOMY_ICON
-			objectMesh.size.x = NATURE_ICON.get_size().aspect()
+			objectMesh.size.x = CIRCULAR_ECONOMY_ICON.get_size().aspect()
 		CustomTypes.Item.LOCAL_CONSUMPTION:
 			material.albedo_texture = LOCAL_CONSUMPTION_ICON
-			objectMesh.size.x = NATURE_ICON.get_size().aspect()
+			objectMesh.size.x = LOCAL_CONSUMPTION_ICON.get_size().aspect()
 		_:
 			print("Can't display unknown item %d" % item)
 	self.global_position.z -= objectMesh.size.y / 2
