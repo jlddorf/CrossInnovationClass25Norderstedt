@@ -40,3 +40,4 @@ func set_item(item: CustomTypes.Item) -> void:
 			objectMesh.size.x = NATURE_ICON.get_size().aspect()
 		_:
 			print("Can't display unknown item %d" % item)
+	self.global_position.z -= objectMesh.size.y / 2
