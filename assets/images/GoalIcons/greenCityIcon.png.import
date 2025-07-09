@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2vwf2ej0p1d7"
-path="res://.godot/imported/communityIcon.png-f722336d71f8b6fe78b5a3dde5f4d372.ctex"
+uid="uid://bgh2of5nksyj6"
+path.s3tc="res://.godot/imported/greenCityIcon.png-70616a76bf4846626daa00692c150f60.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://assets/images/StationIcons/communityIcon.png"
-dest_files=["res://.godot/imported/communityIcon.png-f722336d71f8b6fe78b5a3dde5f4d372.ctex"]
+source_file="res://assets/images/GoalIcons/greenCityIcon.png"
+dest_files=["res://.godot/imported/greenCityIcon.png-70616a76bf4846626daa00692c150f60.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

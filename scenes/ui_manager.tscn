@@ -1,16 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://nngar081b03t"]
+[gd_scene load_steps=15 format=3 uid="uid://nngar081b03t"]
 
 [ext_resource type="Script" uid="uid://cstp3l8oikmq4" path="res://ui/ui_manager.gd" id="1_gl862"]
 [ext_resource type="Theme" uid="uid://230ma3pcldq4" path="res://ui/ueTheme.tres" id="2_ixhu3"]
 [ext_resource type="PackedScene" uid="uid://vb2r20ydhyum" path="res://ui/playerContainer.tscn" id="2_j2mt3"]
-[ext_resource type="Texture2D" uid="uid://dbdph0w8m31j3" path="res://assets/images/StationIcons/communityIcon.png" id="5_jo33p"]
-[ext_resource type="Texture2D" uid="uid://nxwyotynl76u" path="res://assets/images/StationIcons/energyBuildingIcon.png" id="6_hii27"]
-[ext_resource type="Texture2D" uid="uid://dmupi22fhaoi5" path="res://assets/images/StationIcons/localConsumptionIcon.png" id="7_2oyku"]
+[ext_resource type="Texture2D" uid="uid://ddleqxkmq2qu0" path="res://assets/images/GoalIcons/climateProtectionIcon.png" id="5_ms7gl"]
+[ext_resource type="Texture2D" uid="uid://barujnheijmlm" path="res://assets/images/GoalIcons/healthyCityIcon.png" id="6_4v62q"]
+[ext_resource type="Texture2D" uid="uid://bgh2of5nksyj6" path="res://assets/images/GoalIcons/greenCityIcon.png" id="7_45cly"]
 [ext_resource type="PackedScene" uid="uid://jr81cpde0r8s" path="res://scenes/AchievementRect.tscn" id="7_hst8a"]
-[ext_resource type="Texture2D" uid="uid://bki10nv822at0" path="res://assets/images/StationIcons/mobilityIcon.png" id="8_ipats"]
-[ext_resource type="Texture2D" uid="uid://dyp2woqubc17a" path="res://assets/images/StationIcons/natureIcon.png" id="8_tanoa"]
+[ext_resource type="Texture2D" uid="uid://bhlkikal4dvmw" path="res://assets/images/GoalIcons/socialIntegrationIcon.png" id="8_prq0i"]
+[ext_resource type="Texture2D" uid="uid://cwtcgfxy3q3xn" path="res://assets/images/GoalIcons/shortWaysIcon.png" id="9_1ywep"]
+[ext_resource type="Texture2D" uid="uid://b0td44phwl6vn" path="res://assets/images/GoalIcons/circularIcon.png" id="10_amcuk"]
 [ext_resource type="Texture2D" uid="uid://bblwvekyxohx8" path="res://assets/images/Nordercoin.png" id="10_hii27"]
 [ext_resource type="FontFile" uid="uid://dpnlw30s07ynn" path="res://assets/fonts/SourceSans3-Bold.ttf" id="11_2oyku"]
+[ext_resource type="Texture2D" uid="uid://sypegumfuf8k" path="res://assets/images/GoalIcons/fairTradeIcon.png" id="11_ms7gl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jo33p"]
 font = ExtResource("11_2oyku")
@@ -148,36 +150,37 @@ alignment = 1
 [node name="AchievementClimate" parent="Viewport/VBoxContainer/TopPanel/TopPanelVbox/MarginContainer/GoalRow" instance=ExtResource("7_hst8a")]
 unique_name_in_owner = true
 layout_mode = 2
+achievementTexture = ExtResource("5_ms7gl")
 
 [node name="AchievementHealth" parent="Viewport/VBoxContainer/TopPanel/TopPanelVbox/MarginContainer/GoalRow" instance=ExtResource("7_hst8a")]
 unique_name_in_owner = true
 layout_mode = 2
-achievementTexture = ExtResource("5_jo33p")
+achievementTexture = ExtResource("6_4v62q")
 
 [node name="AchievementGreen" parent="Viewport/VBoxContainer/TopPanel/TopPanelVbox/MarginContainer/GoalRow" instance=ExtResource("7_hst8a")]
 unique_name_in_owner = true
 layout_mode = 2
-achievementTexture = ExtResource("6_hii27")
+achievementTexture = ExtResource("7_45cly")
 
 [node name="AchievementIntegration" parent="Viewport/VBoxContainer/TopPanel/TopPanelVbox/MarginContainer/GoalRow" instance=ExtResource("7_hst8a")]
 unique_name_in_owner = true
 layout_mode = 2
-achievementTexture = ExtResource("7_2oyku")
+achievementTexture = ExtResource("8_prq0i")
 
 [node name="AchievementShortWays" parent="Viewport/VBoxContainer/TopPanel/TopPanelVbox/MarginContainer/GoalRow" instance=ExtResource("7_hst8a")]
 unique_name_in_owner = true
 layout_mode = 2
-achievementTexture = ExtResource("8_ipats")
+achievementTexture = ExtResource("9_1ywep")
 
 [node name="AchievementCircular" parent="Viewport/VBoxContainer/TopPanel/TopPanelVbox/MarginContainer/GoalRow" instance=ExtResource("7_hst8a")]
 unique_name_in_owner = true
 layout_mode = 2
-achievementTexture = ExtResource("8_tanoa")
+achievementTexture = ExtResource("10_amcuk")
 
 [node name="AchievementFairtrade" parent="Viewport/VBoxContainer/TopPanel/TopPanelVbox/MarginContainer/GoalRow" instance=ExtResource("7_hst8a")]
 unique_name_in_owner = true
 layout_mode = 2
-achievementTexture = ExtResource("7_2oyku")
+achievementTexture = ExtResource("11_ms7gl")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Viewport/VBoxContainer"]
 layout_mode = 2
