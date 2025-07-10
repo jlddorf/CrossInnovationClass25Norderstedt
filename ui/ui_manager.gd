@@ -86,6 +86,7 @@ func reset() -> void:
 	achievement_fairtrade.update_achievement(-goal_progress[CustomTypes.Goals.FAIRTRADE], Vector2(0,0))
 	achievement_integration.update_achievement(-goal_progress[CustomTypes.Goals.SOCIAL_INTEGRATION], Vector2(0,0))
 	achievement_short_ways.update_achievement(-goal_progress[CustomTypes.Goals.SHORT_WAYS], Vector2(0,0))
+	limit_counter.text = str(Constants.ACHIEVEMENT_THRESHOLD)
 	for goal: CustomTypes.Goals in goal_progress:
 		goal_progress[goal] = 0
 	

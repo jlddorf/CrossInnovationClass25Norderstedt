@@ -250,11 +250,9 @@ size_flags_vertical = 4
 
 [node name="FunFact" parent="Viewport/VBoxContainer/Container/Control" instance=ExtResource("14_4v62q")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(2008, 298)
 layout_mode = 1
 offset_left = -1002.0
 offset_right = 1002.0
 scale = Vector2(0.5, 0.5)
-pivot_offset = Vector2(1002, 149)
 
 [connection signal="set_new_popup" from="Viewport/VBoxContainer/Container/Control/FunFact" to="." method="_on_fun_fact_set_new_popup"]

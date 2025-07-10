@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://jr81cpde0r8s"]
+[gd_scene load_steps=11 format=3 uid="uid://jr81cpde0r8s"]
 
 [ext_resource type="Script" uid="uid://dul2afavf8ej5" path="res://scripts/achievement_rect.gd" id="1_ted1n"]
 [ext_resource type="Texture2D" uid="uid://bvi2vbytkjjpv" path="res://assets/images/StationIcons/circularEconomyIcon.png" id="2_ho1xy"]
@@ -9,7 +9,6 @@
 [ext_resource type="AudioStream" uid="uid://cj6d4edbnem42" path="res://assets/sound/CrossInnoPlaceSound.wav" id="5_k6j82"]
 [ext_resource type="AudioStream" uid="uid://bc0k25we1bujq" path="res://assets/sound/coin.wav" id="5_wsmqc"]
 [ext_resource type="AudioStream" uid="uid://cwiulvr3vupu3" path="res://assets/sound/video-game-bonus-323603.mp3" id="6_fuepx"]
-[ext_resource type="Texture2D" uid="uid://bhlkikal4dvmw" path="res://assets/images/GoalIcons/socialIntegrationIcon.png" id="6_ivpab"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k6j82"]
 resource_local_to_scene = true
@@ -57,7 +56,7 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("6_ivpab")
+texture = ExtResource("2_ho1xy")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("2_ted1n")
