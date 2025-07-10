@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=8 format=3 uid="uid://230ma3pcldq4"]
 
 [ext_resource type="FontFile" uid="uid://dpnlw30s07ynn" path="res://assets/fonts/SourceSans3-Bold.ttf" id="1_vf0qk"]
-[ext_resource type="FontFile" uid="uid://6w1dofqsbche" path="res://assets/fonts/SourceSans3-Regular.ttf" id="2_voggp"]
+[ext_resource type="FontFile" uid="uid://6w1dofqsbche" path="res://assets/SourceSans3-Regular.ttf" id="2_voggp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ni68y"]
 bg_color = Color(0.6, 0.6, 0.6, 0)

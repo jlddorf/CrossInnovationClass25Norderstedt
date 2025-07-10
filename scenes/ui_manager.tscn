@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://nngar081b03t"]
+[gd_scene load_steps=16 format=3 uid="uid://nngar081b03t"]
 
 [ext_resource type="Script" uid="uid://cstp3l8oikmq4" path="res://ui/ui_manager.gd" id="1_gl862"]
 [ext_resource type="Theme" uid="uid://230ma3pcldq4" path="res://ui/ueTheme.tres" id="2_ixhu3"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bblwvekyxohx8" path="res://assets/images/Nordercoin.png" id="10_hii27"]
 [ext_resource type="FontFile" uid="uid://dpnlw30s07ynn" path="res://assets/fonts/SourceSans3-Bold.ttf" id="11_2oyku"]
 [ext_resource type="Texture2D" uid="uid://sypegumfuf8k" path="res://assets/images/GoalIcons/fairTradeIcon.png" id="11_ms7gl"]
+[ext_resource type="PackedScene" uid="uid://onvbsfdr1tt5" path="res://ui/funFact.tscn" id="14_4v62q"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jo33p"]
 font = ExtResource("11_2oyku")
@@ -116,7 +117,7 @@ player_id = 3
 layout_mode = 2
 
 [node name="TopPanel" type="Panel" parent="Viewport/VBoxContainer"]
-custom_minimum_size = Vector2(1200, 200)
+custom_minimum_size = Vector2(1200, 150)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -182,12 +183,31 @@ unique_name_in_owner = true
 layout_mode = 2
 achievementTexture = ExtResource("11_ms7gl")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Viewport/VBoxContainer"]
+[node name="Container" type="Control" parent="Viewport/VBoxContainer"]
+custom_minimum_size = Vector2(1200, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="CoinIcon" type="TextureRect" parent="Viewport/VBoxContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Viewport/VBoxContainer/Container"]
+custom_minimum_size = Vector2(1200, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.5
+offset_top = -40.0
+offset_right = 90.5
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="CoinIcon" type="TextureRect" parent="Viewport/VBoxContainer/Container/HBoxContainer"]
 unique_name_in_owner = true
 texture_filter = 2
 custom_minimum_size = Vector2(80, 80)
@@ -196,11 +216,11 @@ texture = ExtResource("10_hii27")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="MarginContainer" type="MarginContainer" parent="Viewport/VBoxContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Viewport/VBoxContainer/Container/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 15
 
-[node name="LimitCounter" type="Label" parent="Viewport/VBoxContainer/HBoxContainer/MarginContainer"]
+[node name="LimitCounter" type="Label" parent="Viewport/VBoxContainer/Container/HBoxContainer/MarginContainer"]
 unique_name_in_owner = true
 texture_filter = 2
 custom_minimum_size = Vector2(82.96, 50)
@@ -210,3 +230,31 @@ text = "100"
 label_settings = SubResource("LabelSettings_jo33p")
 horizontal_alignment = 1
 clip_text = true
+
+[node name="Control" type="Control" parent="Viewport/VBoxContainer/Container"]
+custom_minimum_size = Vector2(1200, 248)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -124.0
+offset_right = 600.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="FunFact" parent="Viewport/VBoxContainer/Container/Control" instance=ExtResource("14_4v62q")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(2004, 298)
+layout_mode = 1
+offset_left = -1002.0
+offset_right = 1002.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(1000, 149)
+
+[connection signal="set_new_popup" from="Viewport/VBoxContainer/Container/Control/FunFact" to="." method="_on_fun_fact_set_new_popup"]

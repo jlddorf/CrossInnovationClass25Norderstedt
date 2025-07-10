@@ -18,6 +18,59 @@ const INFO_NONE : String = "[b]Bitte platziere ein Objekt auf der Station um zu 
 
 const ACHIEVEMENT_THRESHOLD : int = 100
 
+var FUN_FACTS: Dictionary[CustomTypes.Goals, PackedStringArray] = {
+	CustomTypes.Goals.CLIMATE_PROTECTION: PackedStringArray(
+		[
+			"[b]Klimaneutral[/b]: Prozesse, durch die keine zusätzlichen Treibhausgase in die Atmosphäre gelangen – entweder weil keine Emissionen entstehen oder weil alle ausgestoßenen Emissionen vollständig ausgeglichen werden",
+			"Die Energiewirtschaft trägt zu 42 % zur Anreicherung von CO2 in der Atmosphäre bei",
+			"Die weltweiten Treibhausgase müssen bis 2050 im Vergleich zu 2010 um 70% sinken, um das 2°C Ziel zu erreichen"
+		]
+	),
+	CustomTypes.Goals.MATERIAL_CYCLES: PackedStringArray(
+		[
+			"Teilen trägt zu einer Reduzierung des Ressourcenverbrauchs bei - Sharing is Caring",
+			"[b]Cradle-to-Cradle[/b]: Ein Konzept, bei dem Produkte so hergestellt werden, dass alle Materialien wiederverwendet oder natürlich abgebaut werden können – ohne Müll zu hinterlassen",
+			"Weniger Ressourcenverschwendung führt zu mehr Kostenersparnis, z.B. durch Teilen, Tauschen und Reparierenwie im Repair Café",
+			"Kennst du schon die öffentlichen Bücherschränke? Hier kannst du Bücher anbieten, ausleihen oder tauschen",
+			"Teilen und Tauschen in der Nachbarschaft stärkt gleichzeitig das soziale Umfeld."
+		]
+	), 
+	CustomTypes.Goals.HEALTHY_CITY: PackedStringArray(
+		[
+			"[b]Bürgerfreundlich[/b]: Eine Stadt mit sauberer Luft, Lärmschutz, Möglichkeiten zur gesunde Ernährung und Bewegung. Was bedeutet Bürgerfreundlich für dich?",
+			"Die WHO definiert Gesundheit als das „vollständige körperliche, geistige und soziale Wohlergehen",
+			"Die WHO empfiehlt 30 Minuten Bewegung an 5 Tagen der Woche",
+			"Norderstedt wird leiser: 2012 waren 34% weniger von einem Pegel von mehr als 65 dB(A) am Tag betroffen als noch 2006. Das führt zu mehr Wohlbefinden für AnwohnerInnen"
+		]
+	), 
+	CustomTypes.Goals.GREEN_CITY: PackedStringArray(
+		[
+			"Eine Stadt im Grünen bietet zugängliche Grünflächen und eine reduzierte Bebauungsrate",
+			"[b]Urban Gardening[/b]: Gemeinschaftliches Gärtnern in der Stadt – zum Beispiel auf Balkonen, Dächern oder in Gemeinschaftsgärten",
+			"Grünflächen nehmen Luftschadstoffe auf, stärken das Wohlbefinden und reduzieren Stress",
+			"Grüne Dächer und Fassaden sorgen für viel Grün trotz großer Gebäudedichte"
+		]
+	), 
+	CustomTypes.Goals.FAIRTRADE: PackedStringArray(
+		[
+			"Norderstedt ist offiziell als Fairtrade-Stadt ausgezeichnet, da sie an vielen Stellen Fairtrade Produkte anbietet",
+			"Das Fairtrade-Siegel gewährleistet durch eine unabhängige Überprüfung, dass ErzeugerInnen die Mindestvoraussetzungen für ein selbstbestimmtes Leben geboten bekommen"
+		]
+	),		
+	CustomTypes.Goals.SOCIAL_INTEGRATION: PackedStringArray(
+		[
+			"Soziale Integration vereint Begegnung, Austausch, Kooperation und Gemeinschaft",
+			"Möglichkeiten des Austauschs sind Gemeinschaftsgärten, Tauschbörsen, Straßenfeste oder ein Ehrenamt"
+		]
+	), 
+	CustomTypes.Goals.SHORT_WAYS: PackedStringArray(
+		[
+			"[b]5-Minuten-Stadt[/b]: Bedürfnisse des täglichen Bedarfs wie Einkaufsmöglichkeiten, Schule, Sport liegen in Fuß- und Radnähe — das schafft Unabhängigkeit",
+			"[b]Flächennutzungsplan[/b]: Ein Plan, der zeigt, wo in der Stadt was gebaut oder genutzt werden soll – so kann dafür gesorgt werden, dass ausreichend Biodiversität gesichert wird"
+		]
+	)
+}
+
 #region Placeable Points Nature
 const PLACEMENT_POINTS_NATURE : PackedVector2Array = [
 	Vector2i(320, 312),

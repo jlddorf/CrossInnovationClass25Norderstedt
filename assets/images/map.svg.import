@@ -2,22 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfyle4sm6aih5"
-path.bptc="res://.godot/imported/map.svg-9641652b92d173eb137f56c47f96b06d.bptc.ctex"
+uid="uid://dkxfcwcu608cp"
+path="res://.godot/imported/map.svg-9641652b92d173eb137f56c47f96b06d.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/images/map.svg"
-dest_files=["res://.godot/imported/map.svg-9641652b92d173eb137f56c47f96b06d.bptc.ctex"]
+dest_files=["res://.godot/imported/map.svg-9641652b92d173eb137f56c47f96b06d.ctex"]
 
 [params]
 
-compress/mode=2
-compress/high_quality=true
+compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
