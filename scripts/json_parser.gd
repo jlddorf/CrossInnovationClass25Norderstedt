@@ -15,6 +15,7 @@ const CustomTypes = preload("res://scripts/custom_types.gd")
 
 signal item_changed(player_id: int, newItem: CustomTypes.Item)
 signal encoder_changed(player_id: int, change: int)
+signal button_pressed(player_id: int)
 
 # Parses the object and relays it further. The input is expected to be in accordance 
 # with the input specification in the README
@@ -51,4 +52,8 @@ func parse(json_object: Dictionary) -> void:
 		DEVICE_ENCODER:
 			var change: int = json_object.get(INPUT_KEY_ENCODER_DIRECTION, 0) if json_object.get(INPUT_KEY_ENCODER_DIRECTION, 0) != null else 0
 			encoder_changed.emit(device_id, change)
+		DEVICE_BUTTON:
+			button_pressed.emit(device_id)
+			
+		
 		

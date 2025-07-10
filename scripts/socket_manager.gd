@@ -7,6 +7,7 @@ var socket: WebSocketPeer = WebSocketPeer.new()
 
 signal item_changed(player_id: int, new_item: int)
 signal encoder_changed(player_id: int, change: int)
+signal button_pressed(player_id: int)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -50,3 +51,7 @@ func _on_json_parser_encoder_changed(player_id: int, change: int) -> void:
 
 func _on_json_parser_item_changed(player_id: int, newItem: int) -> void:
 	item_changed.emit(player_id, newItem)
+
+
+func _on_json_parser_button_pressed(player_id: int) -> void:
+	button_pressed.emit(player_id)

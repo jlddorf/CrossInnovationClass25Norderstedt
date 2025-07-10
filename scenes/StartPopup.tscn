@@ -1,0 +1,145 @@
+[gd_scene load_steps=11 format=3 uid="uid://d1m648ewts7li"]
+
+[ext_resource type="Theme" uid="uid://230ma3pcldq4" path="res://ui/ueTheme.tres" id="1_wwbot"]
+[ext_resource type="FontFile" uid="uid://7e5dd7r3tuwm" path="res://assets/fonts/SourceSans3-Regular.ttf" id="2_1w8sx"]
+[ext_resource type="FontFile" uid="uid://dpnlw30s07ynn" path="res://assets/fonts/SourceSans3-Bold.ttf" id="3_b0d3h"]
+[ext_resource type="Texture2D" uid="uid://b87s1j8dltcj8" path="res://assets/images/GoalGraphics/climate_goal.png" id="4_v4s3c"]
+[ext_resource type="Texture2D" uid="uid://b3k6cdfskxcv7" path="res://assets/images/GoalGraphics/health_goal.png" id="5_r0l7g"]
+[ext_resource type="Texture2D" uid="uid://ul7g8k4ovpcn" path="res://assets/images/GoalGraphics/green_city_goal.png" id="6_vesg5"]
+[ext_resource type="Texture2D" uid="uid://comer8smaeavh" path="res://assets/images/GoalGraphics/social_goal.png" id="7_t35gg"]
+[ext_resource type="Texture2D" uid="uid://ce12pykyt6wbg" path="res://assets/images/GoalGraphics/short_ways_goal.png" id="8_uy2i8"]
+[ext_resource type="Texture2D" uid="uid://dtt67dqvx5b4f" path="res://assets/images/GoalGraphics/circular_goal.png" id="9_b7sqg"]
+[ext_resource type="Texture2D" uid="uid://brly3yew8r50a" path="res://assets/images/GoalGraphics/fairtrade_goal.png" id="10_54db1"]
+
+[node name="StartPopup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(1500, 900)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_wwbot")
+theme_type_variation = &"StartPopup"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 65
+theme_override_constants/margin_right = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(800, 700)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_1w8sx")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Willkommen bei Neuderstedt
+In diesem Spiel geht es darum, herauszufinden, wie du und deine Freunde Norderstedt verändern würdet, um es zu einer noch lebenswerteren Stadt zu machen.
+
+Dafür könnt ihr Objekte auf einer Stadtkarte platzieren, die sich bestimmten Kategorien zuordnen lassen. Doch wie in der realen Planung habt ihr nur ein limitiertes Budget. 
+Am oberen Bildschirmrand könnt ihr außerdem die Ziele, die Norderstedt für sich selbst gesetzt hat, sehen. Eure platzierten Objekte geben euch Punkte für die einzelnen Ziele. Aber Vorsicht, einige Objekte geben Punkte für mehrere Ziele. Schafft ihr es, eure Wünsche, Norderstedts Ziele und das Budget miteinander zu vereinbaren?
+Stellt euch an jeweils eine Station und drückt auf einen der Drehknöpfe, um zu beginnen. 
+Viel Spaß!"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_1w8sx")
+theme_override_fonts/bold_font = ExtResource("3_b0d3h")
+theme_override_font_sizes/bold_font_size = 51
+bbcode_enabled = true
+text = "[b]Norderstedts Leitziele[/b]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_v4s3c")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_r0l7g")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_vesg5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_t35gg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("8_uy2i8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect6" type="TextureRect" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_b7sqg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect7" type="TextureRect" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("10_54db1")
+expand_mode = 1
+stretch_mode = 5

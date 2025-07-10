@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://o474issdswyw"]
+[gd_scene load_steps=13 format=3 uid="uid://o474issdswyw"]
 
 [ext_resource type="Script" uid="uid://d6jlpupygc1n" path="res://scripts/map.gd" id="1_0cso3"]
 [ext_resource type="PackedScene" uid="uid://nngar081b03t" path="res://scenes/ui_manager.tscn" id="1_4xfga"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://d03rw3xpmth73" path="res://scripts/map_mesh.gd" id="5_nakos"]
 [ext_resource type="Script" uid="uid://5sdtyno1chso" path="res://scripts/object_manager.gd" id="6_nakos"]
 [ext_resource type="PackedScene" uid="uid://bp2n0d7ix4dm4" path="res://scenes/socket_manager.tscn" id="7_nakos"]
+[ext_resource type="PackedScene" uid="uid://d1m648ewts7li" path="res://scenes/StartPopup.tscn" id="8_be0no"]
+[ext_resource type="PackedScene" uid="uid://dvueja2pjy6t5" path="res://scenes/EndPopup.tscn" id="9_be0no"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2lpho"]
 albedo_color = Color(0.728822, 0.728822, 0.728822, 1)
@@ -28,6 +30,7 @@ script = ExtResource("1_0cso3")
 script = ExtResource("2_2lpho")
 
 [node name="UI_manager" parent="." instance=ExtResource("1_4xfga")]
+unique_name_in_owner = true
 
 [node name="Map" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0421495)
@@ -58,5 +61,33 @@ websocket_url = "ws://localhost:8090/input/3"
 script = ExtResource("6_nakos")
 target_mesh = NodePath("../Map")
 
+[node name="StartPopup" parent="." instance=ExtResource("8_be0no")]
+unique_name_in_owner = true
+
+[node name="EndPopup" parent="." instance=ExtResource("9_be0no")]
+unique_name_in_owner = true
+
+[node name="GameTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 10.0
+one_shot = true
+ignore_time_scale = true
+
+[node name="ButtonTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 5.0
+one_shot = true
+ignore_time_scale = true
+
+[node name="EndScreenTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 5.0
+one_shot = true
+ignore_time_scale = true
+
+[connection signal="button_press_registered" from="PlayerManager" to="." method="_on_player_manager_button_press_registered"]
+[connection signal="update_player_item" from="PlayerManager" to="." method="_on_player_manager_update_player_item"]
 [connection signal="update_player_item" from="PlayerManager" to="UI_manager" method="_on_player_manager_update_player_item"]
 [connection signal="update_player_item" from="PlayerManager" to="ObjectManager" method="_on_player_manager_update_player_item"]
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
+[connection signal="timeout" from="EndScreenTimer" to="." method="_on_end_screen_timer_timeout"]

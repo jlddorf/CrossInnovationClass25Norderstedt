@@ -4,6 +4,8 @@ const CustomTypes = preload("res://scripts/custom_types.gd")
 
 signal update_player_item(player_id: int, item: CustomTypes.Item, currentAmount: int, change: int)
 
+signal button_press_registered(player_id: int)
+
 # Dictionary of the player id to the selected item
 static var selected_items : Dictionary[int, CustomTypes.Item]
 
@@ -19,6 +21,7 @@ func _ready() -> void:
 	for node : Node in socket_manager:
 		node.connect("encoder_changed", change_selected_amount_of_player)
 		node.connect("item_changed", change_item_of_player)
+		node.connect("button_pressed", register_button_press)
 		
 func emit_item_update(player_id: int, change: int) -> void:
 	var current_item : CustomTypes.Item = selected_items.get(player_id, CustomTypes.Item.NONE)
@@ -40,4 +43,8 @@ func change_item_of_player(player_id: int, item: CustomTypes.Item) -> void:
 		selected_items[player_id] = item
 		emit_item_update(player_id, 0)
 			
+func register_button_press(player_id: int) -> void:
+	button_press_registered.emit(player_id)
+	
+	
 	

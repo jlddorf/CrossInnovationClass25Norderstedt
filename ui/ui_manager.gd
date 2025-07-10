@@ -1,4 +1,5 @@
 extends Control
+class_name UiManager
 
 const CustomTypes = preload("res://scripts/custom_types.gd")
 
