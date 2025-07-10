@@ -59,7 +59,11 @@ func show_end_screen() -> void:
 	var goal2: CustomTypes.Goals = categories.find_key(goals[goals.size() - 2])
 	categories.erase(goal2)
 	var goal3: CustomTypes.Goals = categories.find_key(goals[goals.size() - 3])
-	end_popup.change_goals(goal1, goal2, goal3)
+	var reached_goals: int = 0
+	for amount: int in goals:
+		if amount > Constants.ACHIEVEMENT_THRESHOLD:
+			reached_goals+= 1
+	end_popup.change_goals(goal1, goal2, goal3, reached_goals)
 	var tween : Tween = self.create_tween()
 	tween.tween_property(ui_manager, "modulate", Color(1,1,1,0), 1)
 	tween.tween_property(end_popup, "modulate", Color(1,1,1,1), 1)
