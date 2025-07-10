@@ -13,6 +13,7 @@ const Constants = preload("res://scripts/constants.gd")
 @onready var add_point_player: AudioStreamPlayer = %AddPointPlayer
 @onready var grant_achievement_player: AudioStreamPlayer = %GrantAchievementPlayer
 @onready var take_point_player: AudioStreamPlayer = %TakePointPlayer
+@onready var granted_texture: GrantedTexture = %GrantedTexture
 
 var currentPoints: int = 0
 
@@ -44,6 +45,9 @@ func update_achievement_value(change: int) -> void:
 		print("updating achievement")
 		grant_achievement_player.play()
 		_achievement_texture.mark_granted()
+		granted_texture.show_animated()
+	elif (temp >= Constants.ACHIEVEMENT_THRESHOLD && currentPoints < Constants.ACHIEVEMENT_THRESHOLD):
+		granted_texture.hide_animated()
 	elif (change > 0):
 		add_point_player.play()
 	elif (change < 0):

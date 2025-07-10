@@ -1,12 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://jr81cpde0r8s"]
+[gd_scene load_steps=12 format=3 uid="uid://jr81cpde0r8s"]
 
 [ext_resource type="Script" uid="uid://dul2afavf8ej5" path="res://scripts/achievement_rect.gd" id="1_ted1n"]
 [ext_resource type="Texture2D" uid="uid://bvi2vbytkjjpv" path="res://assets/images/StationIcons/circularEconomyIcon.png" id="2_ho1xy"]
 [ext_resource type="Script" uid="uid://cwvg4ysfx8f1y" path="res://scenes/achievement_rect.gd" id="2_ted1n"]
+[ext_resource type="Texture2D" uid="uid://dhndaf2ugiypj" path="res://assets/images/Stern.png" id="3_60wn6"]
 [ext_resource type="Shader" uid="uid://d342kqara7xxi" path="res://shader/AchievementRect.gdshader" id="3_fares"]
+[ext_resource type="Script" uid="uid://cdgk3hyn4wufl" path="res://ui/granted_texture.gd" id="4_bmbwh"]
 [ext_resource type="AudioStream" uid="uid://cj6d4edbnem42" path="res://assets/sound/CrossInnoPlaceSound.wav" id="5_k6j82"]
 [ext_resource type="AudioStream" uid="uid://bc0k25we1bujq" path="res://assets/sound/coin.wav" id="5_wsmqc"]
 [ext_resource type="AudioStream" uid="uid://cwiulvr3vupu3" path="res://assets/sound/video-game-bonus-323603.mp3" id="6_fuepx"]
+[ext_resource type="Texture2D" uid="uid://bhlkikal4dvmw" path="res://assets/images/GoalIcons/socialIntegrationIcon.png" id="6_ivpab"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k6j82"]
 resource_local_to_scene = true
@@ -19,13 +22,42 @@ custom_minimum_size = Vector2(100, 100)
 script = ExtResource("1_ted1n")
 achievementTexture = ExtResource("2_ho1xy")
 
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="GrantedTexture" type="TextureRect" parent="Control"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -95.0
+offset_right = 95.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_60wn6")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("4_bmbwh")
+
 [node name="AchievementTexture" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_k6j82")
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("2_ho1xy")
+texture = ExtResource("6_ivpab")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("2_ted1n")
