@@ -1,4 +1,5 @@
 extends Node
+class_name PlayerManager
 
 const CustomTypes = preload("res://scripts/custom_types.gd")
 
@@ -46,5 +47,9 @@ func change_item_of_player(player_id: int, item: CustomTypes.Item) -> void:
 func register_button_press(player_id: int) -> void:
 	button_press_registered.emit(player_id)
 	
+func reset() -> void:
+	item_count = 0
+	for item: CustomTypes.Item in item_amounts:
+		item_amounts[item] = 0
 	
 	

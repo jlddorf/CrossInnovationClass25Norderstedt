@@ -77,3 +77,16 @@ func _on_fun_fact_set_new_popup() -> void:
 	else:
 		item = goal_progress.keys()[randi() % goal_progress.size()]
 	fun_fact.set_new_fact(item)
+
+func reset() -> void:
+	achievement_climate.update_achievement(-goal_progress[CustomTypes.Goals.CLIMATE_PROTECTION], Vector2(0,0))
+	achievement_health.update_achievement(-goal_progress[CustomTypes.Goals.HEALTHY_CITY], Vector2(0,0))
+	achievement_green.update_achievement(-goal_progress[CustomTypes.Goals.GREEN_CITY], Vector2(0,0))
+	achievement_circular.update_achievement(-goal_progress[CustomTypes.Goals.MATERIAL_CYCLES], Vector2(0,0))
+	achievement_fairtrade.update_achievement(-goal_progress[CustomTypes.Goals.FAIRTRADE], Vector2(0,0))
+	achievement_integration.update_achievement(-goal_progress[CustomTypes.Goals.SOCIAL_INTEGRATION], Vector2(0,0))
+	achievement_short_ways.update_achievement(-goal_progress[CustomTypes.Goals.SHORT_WAYS], Vector2(0,0))
+	for goal: CustomTypes.Goals in goal_progress:
+		goal_progress[goal] = 0
+	
+	

@@ -1,4 +1,5 @@
 extends Node
+class_name ObjectManager
 
 const CustomTypes = preload("res://scripts/custom_types.gd")
 const OBJECT : PackedScene = preload("res://scenes/object.tscn")
@@ -53,3 +54,10 @@ func get_random_coordinate_on_mesh(item: CustomTypes.Item) -> Vector3:
 	# Set height dependent on height on image to avoid wrong drawing order
 	var height : float = 0.05 * (spot_on_map.y / target_mesh_size.y)
 	return Vector3(spot_on_map.x, 0.25 + height, spot_on_map.y)
+
+func reset() -> void:
+	for item : CustomTypes.Item in placed_items:
+		var item_array: Array = placed_items[item]
+		while item_array.size() > 0:
+			var current_node: Node = item_array.pop_back()
+			current_node.queue_free()

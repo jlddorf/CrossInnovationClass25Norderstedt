@@ -8,6 +8,8 @@ extends Node3D
 @onready var button_timer: Timer = %ButtonTimer
 @onready var end_screen_timer: Timer = %EndScreenTimer
 @onready var end_popup: EndPopup = %EndPopup
+@onready var player_manager: PlayerManager = $PlayerManager
+@onready var object_manager: ObjectManager = $ObjectManager
 
 var game_state : CustomTypes.GameState = CustomTypes.GameState.START
 var button_already_pressed_by: int = -1
@@ -38,6 +40,9 @@ func reset_game()-> void:
 	var tween : Tween = self.create_tween()
 	tween.tween_property(end_popup, "modulate", Color(1,1,1,0), 1)
 	tween.tween_property(start_popup, "modulate", Color(1,1,1,1), 1)
+	player_manager.reset()
+	ui_manager.reset()
+	object_manager.reset()
 	game_state = CustomTypes.GameState.START
 
 

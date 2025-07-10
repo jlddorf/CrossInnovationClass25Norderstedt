@@ -14,7 +14,8 @@ const INFO_CIRCULAR_ECONOMY: String = "Mit dem Regler förderst du den bewussten
 [b]Kreislaufwirtschaft[/b] bedeutet, Ressourcen so zu nutzen, dass möglichst wenig Abfall entsteht. Dabei helfen die sogenannten R-Regeln, die sich auf viele Lebensbereiche anwenden lassen: refuse = Ablehnen zB durch den Kauf von Second-Hand statt Neuware, reduce = Reduzieren – etwa durch weniger Lebensmittelabfälle, reuse = Wiederverwenden – beim Teilen und Ausleihen, recycle – über den Wertstoffhof Norderstedt und repair = Reparieren – z. B. im Repair-Café."
 const INFO_LOCAL_CONSUMPTION: String = "Mit dem Regler stärkst du den bewussten Einkauf vor Ort.
 [b]Lokaler Konsum[/b] steht für faire, regionale und umweltfreundliche Produkte. Durch den Kauf saisonaler Lebensmittel, die Unterstützung von Fairtrade-Geschäften, unverpacktes Einkaufen oder die Nutzung öffentlicher Wasserstationen wird der Alltag nachhaltiger und ressourcenschonender gestaltet. Auch die Mitgliedschaft in einer CSA (gemeinschaftsgetragene Landwirtschaft) gehört dazu – dabei teilen sich Verbraucherinnen und Landwirtinnen Verantwortung, Kosten und Ernte."
-const INFO_NONE : String = "[b]Bitte platziere ein Objekt auf der Station um zu beginnen[/b]"
+const INFO_NONE : String = "[b]Bitte platziere ein Objekt auf der Station um zu beginnen
+Wenn ihr fertig seid, drückt gleichzeitig die Knöpfe[/b]"
 
 const ACHIEVEMENT_THRESHOLD : int = 100
 
