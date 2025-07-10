@@ -97,7 +97,7 @@ stretch_mode = 5
 [node name="RichTextLabel3" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 25
-text = "Norderstedt auch! Wenn ihr erfahren möchtet, wie die Stadt sich bereits mit diesen Anliegen auseinandersetzt, findet ihr hier weitere Informationen und Anlaufstellen, um weitere Schritte in Richtung eurer Ziele zu unternehmen."
+text = "Norderstedt sind diese Anliegen auch wichtig! Wenn ihr erfahren möchtet, wie die Stadt sich bereits mit diesen Themen auseinandersetzt, findet ihr hier weitere Informationen und Anlaufstellen, um weitere Schritte in Richtung eurer Ziele zu unternehmen."
 fit_content = true
 horizontal_alignment = 1
 
