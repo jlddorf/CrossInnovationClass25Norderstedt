@@ -7,9 +7,9 @@ func _ready() -> void:
 	tween.tween_property(self, "rotation_degrees", 360, 5).from_current()
 	
 func hide_animated() -> void:
-	var tween = self.create_tween()
+	var tween : Tween = self.create_tween()
 	tween.tween_property(self, "modulate", Color(1,1,1,0), 1)
 
 func show_animated() -> void:
-	var tween = self.create_tween()
+	var tween : Tween = self.create_tween()
 	tween.tween_property(self, "modulate", Color(1,1,1,1), 1)

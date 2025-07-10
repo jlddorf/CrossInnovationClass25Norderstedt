@@ -37,31 +37,31 @@ func _on_player_manager_update_player_item(player_id: int, item: int, currentAmo
 	var counter_position: Vector2 = coin_icon.global_position + coin_icon.size / 2
 	match item:
 		CustomTypes.Item.NATURE:
-			goal_progress[CustomTypes.Goals.CLIMATE_PROTECTION] += change
-			goal_progress[CustomTypes.Goals.GREEN_CITY] += change
-			achievement_climate.update_achievement(change, counter_position)
-			achievement_green.update_achievement(change, counter_position)
+			goal_progress[CustomTypes.Goals.CLIMATE_PROTECTION] += change * 2
+			goal_progress[CustomTypes.Goals.GREEN_CITY] += change * 3
+			achievement_climate.update_achievement(change * 2, counter_position)
+			achievement_green.update_achievement(change * 3, counter_position)
 		CustomTypes.Item.MOBILITY:
-			goal_progress[CustomTypes.Goals.HEALTHY_CITY] += change
-			goal_progress[CustomTypes.Goals.SHORT_WAYS] += change
-			achievement_health.update_achievement(change, counter_position)
-			achievement_short_ways.update_achievement(change, counter_position)
+			goal_progress[CustomTypes.Goals.HEALTHY_CITY] += change * 2
+			goal_progress[CustomTypes.Goals.SHORT_WAYS] += change * 3
+			achievement_health.update_achievement(change * 2, counter_position)
+			achievement_short_ways.update_achievement(change * 3, counter_position)
 		CustomTypes.Item.ENERGY_BUILDING:
-			goal_progress[CustomTypes.Goals.CLIMATE_PROTECTION] += change
-			achievement_climate.update_achievement(change, counter_position)
+			goal_progress[CustomTypes.Goals.CLIMATE_PROTECTION] += change * 5
+			achievement_climate.update_achievement(change * 5, counter_position)
 		CustomTypes.Item.COMMUNITY:
-			goal_progress[CustomTypes.Goals.SOCIAL_INTEGRATION] += change
-			achievement_integration.update_achievement(change, counter_position)
+			goal_progress[CustomTypes.Goals.SOCIAL_INTEGRATION] += change * 5
+			achievement_integration.update_achievement(change * 5, counter_position)
 		CustomTypes.Item.CIRCULAR_ECONOMY:
-			goal_progress[CustomTypes.Goals.MATERIAL_CYCLES] += change
-			goal_progress[CustomTypes.Goals.FAIRTRADE] += change
-			achievement_circular.update_achievement(change, counter_position)
-			achievement_fairtrade.update_achievement(change, counter_position)
+			goal_progress[CustomTypes.Goals.MATERIAL_CYCLES] += change * 3
+			goal_progress[CustomTypes.Goals.FAIRTRADE] += change * 2
+			achievement_circular.update_achievement(change * 3, counter_position)
+			achievement_fairtrade.update_achievement(change * 2, counter_position)
 		CustomTypes.Item.LOCAL_CONSUMPTION:
-			goal_progress[CustomTypes.Goals.CLIMATE_PROTECTION] += change
-			goal_progress[CustomTypes.Goals.FAIRTRADE] += change
-			achievement_climate.update_achievement(change, counter_position)
-			achievement_fairtrade.update_achievement(change, counter_position)
+			goal_progress[CustomTypes.Goals.CLIMATE_PROTECTION] += change * 2
+			goal_progress[CustomTypes.Goals.FAIRTRADE] += change * 3
+			achievement_climate.update_achievement(change * 2, counter_position)
+			achievement_fairtrade.update_achievement(change * 3, counter_position)
 
 
 func _on_fun_fact_set_new_popup() -> void:
