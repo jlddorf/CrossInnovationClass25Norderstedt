@@ -23,7 +23,6 @@ func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		print("got close request")
 		socket_manager.cleanup()
-		socket_manager_2.cleanup()
 		get_tree().quit() # default behavior
 
 func start_game() -> void:

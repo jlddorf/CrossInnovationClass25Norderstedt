@@ -55,3 +55,25 @@ func _on_json_parser_item_changed(player_id: int, newItem: int) -> void:
 
 func _on_json_parser_button_pressed(player_id: int) -> void:
 	button_pressed.emit(player_id)
+
+var current_item: int = 6
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("next_icon"):
+		current_item += 1
+		if current_item > 6:
+			current_item = 0
+		_on_json_parser_item_changed(1, current_item)
+	if event.is_action_pressed("previous_icon"):
+		current_item -= 1
+		if current_item < 0:
+			current_item = 6
+		_on_json_parser_item_changed(1, current_item)
+	if event.is_action_pressed("press_button"):
+		_on_json_parser_button_pressed(1)
+		_on_json_parser_button_pressed(2)
+	if event.is_action_pressed("add_item"):
+		_on_json_parser_encoder_changed(1, 1)
+	if event.is_action_pressed("remove_item"):
+		_on_json_parser_encoder_changed(1, -1)
+
+		

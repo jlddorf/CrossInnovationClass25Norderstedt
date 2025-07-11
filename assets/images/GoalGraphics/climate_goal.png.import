@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b87s1j8dltcj8"
 path.s3tc="res://.godot/imported/climate_goal.png-efc316e2aabaa972e3a43d91a67b70f1.s3tc.ctex"
+path.etc2="res://.godot/imported/climate_goal.png-efc316e2aabaa972e3a43d91a67b70f1.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/images/GoalGraphics/climate_goal.png"
-dest_files=["res://.godot/imported/climate_goal.png-efc316e2aabaa972e3a43d91a67b70f1.s3tc.ctex"]
+dest_files=["res://.godot/imported/climate_goal.png-efc316e2aabaa972e3a43d91a67b70f1.s3tc.ctex", "res://.godot/imported/climate_goal.png-efc316e2aabaa972e3a43d91a67b70f1.etc2.ctex"]
 
 [params]
 
